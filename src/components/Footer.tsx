@@ -7,7 +7,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="SULAB 로고" className="h-8 w-8 object-contain" />
+              <img
+                src="/logo.png"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  img.onerror = null;
+                  img.src = "/logo.svg";
+                }}
+                alt="SULAB 로고"
+                className="h-8 w-8 object-contain"
+              />
               <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>

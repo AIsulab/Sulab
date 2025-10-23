@@ -19,7 +19,16 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="SULAB 로고" className="h-8 w-8 object-contain" />
+              <img
+                src="/logo.png"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  img.onerror = null;
+                  img.src = "/logo.svg";
+                }}
+                alt="SULAB 로고"
+                className="h-8 w-8 object-contain"
+              />
               <span className="text-[#14213D]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
           </div>
