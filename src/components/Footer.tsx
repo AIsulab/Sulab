@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+﻿import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -15,20 +15,20 @@ export function Footer() {
                   img.onerror = null;
                   img.src = "/logo.svg";
                 }}
-                alt="SULAB 로고"
+                alt="SULAB 濡쒓퀬"
                 className="h-8 w-8 object-contain"
               />
               <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-              AI로 만드는 마케팅의 미래<br />
-              기술과 창의의 완벽한 조합
+              AI濡?留뚮뱶??留덉??낆쓽 誘몃옒<br />
+              湲곗닠怨?李쎌쓽???꾨꼍??議고빀
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>바로가기</h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>諛붾줈媛湲?/h4>
             <ul className="space-y-2">
               <li>
                 <button
@@ -36,7 +36,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  회사소개
+                  ?뚯궗?뚭컻
                 </button>
               </li>
               <li>
@@ -45,8 +45,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  서비스
-                </button>
+                  ?쒕퉬??                </button>
               </li>
               <li>
                 <button
@@ -54,8 +53,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  포트폴리오
-                </button>
+                  ?ы듃?대━??                </button>
               </li>
               <li>
                 <button
@@ -63,7 +61,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  문의
+                  臾몄쓽
                 </button>
               </li>
             </ul>
@@ -71,13 +69,13 @@ export function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>?곕씫泥?/h4>
             <ul className="space-y-2 mb-4">
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                이메일: sulabstore@naver.com
+                ?대찓?? sulabstore@naver.com
               </li>
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                주소: 서울특별시 (업데이트 예정)
+                二쇱냼: ?쒖슱?밸퀎??(?낅뜲?댄듃 ?덉젙)
               </li>
             </ul>
             <div className="flex gap-3">
@@ -117,7 +115,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-              © 2025 SULAB. All rights reserved.
+              짤 2025 SULAB. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a
@@ -125,14 +123,14 @@ export function Footer() {
                 className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                 style={{ fontSize: "0.875rem" }}
               >
-                이용약관
+                ?댁슜?쎄?
               </a>
               <a
                 href="#"
                 className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                 style={{ fontSize: "0.875rem" }}
               >
-                개인정보처리방침
+                媛쒖씤?뺣낫泥섎━諛⑹묠
               </a>
             </div>
           </div>
@@ -141,4 +139,5 @@ export function Footer() {
     </footer>
   );
 }
+
 
