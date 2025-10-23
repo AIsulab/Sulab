@@ -15,20 +15,19 @@ export function Footer() {
                   img.onerror = null;
                   img.src = "/logo.svg";
                 }}
-                alt="SULAB 濡쒓퀬"
+                alt="SULAB 로고"
                 className="h-8 w-8 object-contain"
               />
               <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-              AI濡?留뚮뱶??留덉??낆쓽 誘몃옒<br />
-              湲곗닠怨?李쎌쓽???꾨꼍??議고빀
+              SULAB은 AI 기술로 홈페이지 제작과 마케팅을 자동화하는 연구소형 기업입니다.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>諛붾줈媛湲?/h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>빠른 링크</h4>
             <ul className="space-y-2">
               <li>
                 <button
@@ -36,7 +35,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  ?뚯궗?뚭컻
+                  회사 소개
                 </button>
               </li>
               <li>
@@ -45,7 +44,8 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  ?쒕퉬??                </button>
+                  서비스
+                </button>
               </li>
               <li>
                 <button
@@ -53,7 +53,8 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  ?ы듃?대━??                </button>
+                  포트폴리오
+                </button>
               </li>
               <li>
                 <button
@@ -61,7 +62,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  臾몄쓽
+                  문의하기
                 </button>
               </li>
             </ul>
@@ -69,13 +70,13 @@ export function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>?곕씫泥?/h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
             <ul className="space-y-2 mb-4">
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                ?대찓?? sulabstore@naver.com
+                이메일: sulabstore@naver.com
               </li>
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                二쇱냼: ?쒖슱?밸퀎??(?낅뜲?댄듃 ?덉젙)
+                운영시간: 평일 09:00 - 18:00 (주말/공휴일 휴무)
               </li>
             </ul>
             <div className="flex gap-3">
@@ -115,7 +116,7 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-              짤 2025 SULAB. All rights reserved.
+              © 2025 SULAB. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a
@@ -123,14 +124,14 @@ export function Footer() {
                 className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                 style={{ fontSize: "0.875rem" }}
               >
-                ?댁슜?쎄?
+                이용약관
               </a>
               <a
                 href="#"
                 className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                 style={{ fontSize: "0.875rem" }}
               >
-                媛쒖씤?뺣낫泥섎━諛⑹묠
+                개인정보처리방침
               </a>
             </div>
           </div>
