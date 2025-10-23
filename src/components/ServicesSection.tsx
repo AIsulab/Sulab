@@ -4,20 +4,20 @@ export function ServicesSection() {
   const services = [
     {
       icon: Globe,
-      title: "AI 홈페이지 제작",
-      description: "클릭 한 번으로 반응형 웹사이트 완성",
+      title: "AI 카페·웹사이트 제작",
+      description: "클릭 몇 번으로 반응형 웹사이트 생성",
       color: "#00ADB5",
     },
     {
       icon: Zap,
       title: "AI 마케팅 자동화",
-      description: "광고 세팅부터 리포트까지 AI로 처리",
+      description: "광고 세팅부터 리포트까지 AI가 처리",
       color: "#00ADB5",
     },
     {
       icon: Sparkles,
       title: "AI 콘텐츠 제작",
-      description: "블로그, 쇼츠, SNS 콘텐츠를 AI가 자동 생성",
+      description: "블로그 포스트, SNS 콘텐츠를 AI가 자동 생성",
       color: "#00ADB5",
     },
   ];
@@ -82,3 +82,4 @@ export function ServicesSection() {
     </section>
   );
 }
+

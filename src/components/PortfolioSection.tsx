@@ -1,57 +1,62 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Monitor, Zap, Sparkles, ShoppingCart, Settings } from "lucide-react";
+import { Monitor, Zap, Sparkles, ShoppingCart, Settings, Check } from "lucide-react";
 
 export function PortfolioSection() {
   const capabilities = [
     {
       icon: Monitor,
-      title: "WordPress & Webflow 기반 반응형 웹 구축",
+      title: "WordPress & Webflow 기반 반응형 사이트 구축",
       items: [
-        "브랜드 성격에 맞는 디자인 시스템 설계",
-        "관리자용 콘텐츠 관리(CMS) 구조 자동화",
+        "브랜드 성격에 맞는 사용자 경험 설계",
+        "관리자와 콘텐츠(CMS) 구조 자동화",
         "모바일·태블릿 반응형 최적화",
       ],
-      image: "https://images.unsplash.com/photo-1722596627369-a743837c7176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JkcHJlc3MlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc2MTEyMjU0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1722596627369-a743837c7176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JkcHJlc3MlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc2MTEyMjU0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       icon: Zap,
       title: "노코드/로코드 웹사이트 자동 생성 시스템",
       items: [
         "AI 프롬프트 기반 페이지 생성",
-        "서비스별 자동 레이아웃 설계 및 섹션 배치",
-        "데이터 연동형 폼, 문의 시스템 통합",
+        "서비스별 자동 레이아웃 설계 · 섹션 배치",
+        "데이터 연동, 문의 폼 시스템 통합",
       ],
-      image: "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxubyUyMGNvZGUlMjBhdXRvbWF0aW9ufGVufDF8fHx8MTc2MTIzNjQ2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxubyUyMGNvZGUlMjBhdXRvbWF0aW9ufGVufDF8fHx8MTc2MTIzNjQ2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       icon: Sparkles,
-      title: "AI 콘텐츠 및 이미지 자동 생성 연동",
+      title: "AI 콘텐츠·이미지 자동 생성 파이프라인",
       items: [
-        "텍스트·배너·상품 설명 자동 작성",
-        "로고·섹션 배경·썸네일 이미지 자동 생성",
+        "텍스트·배너·상품 설명 자동 생성",
+        "로고·섹션 배경·히어로 이미지 자동 생성",
         "다국어 자동 번역 및 SEO 자동 최적화",
       ],
-      image: "https://images.unsplash.com/photo-1721864428830-7417b93831b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGNvbnRlbnQlMjBjcmVhdGlvbnxlbnwxfHx8fDE3NjEyMzY0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1721864428830-7417b93831b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGNvbnRlbnQlMjBjcmVhdGlvbnxlbnwxfHx8fDE3NjEyMzY0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       icon: ShoppingCart,
       title: "커머스·예약·게시판 기능 통합 구축",
       items: [
         "WordPress WooCommerce / Shopify 연동",
-        "온라인 상담·예약 시스템 자동 삽입",
+        "예약·상담·문의 시스템 도입",
         "공공·기업용 자료 게시판 구성 가능",
       ],
-      image: "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwbGF0Zm9ybXxlbnwxfHx8fDE3NjEyMDM2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwbGF0Zm9ybXxlbnwxfHx8fDE3NjEyMDM2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
     {
       icon: Settings,
-      title: "운영 및 유지보수 자동화 시스템",
+      title: "운영 자동화·유지보수 서비스",
       items: [
-        "AI 모니터링을 통한 트래픽 분석",
-        "문의·견적 요청 자동 분류 및 알림 전송",
-        "CMS 내 텍스트·이미지 실시간 업데이트",
+        "AI 모니터링 기반 성과 분석",
+        "문의·견적 요청 자동 분류 및 알림 발송",
+        "CMS 콘텐츠·이미지 실시간 업데이트",
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwYW5hbHl0aWNzJTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NjEyMzY0Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwYW5hbHl0aWNzJTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NjEyMzY0Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     },
   ];
 
@@ -64,10 +69,10 @@ export function PortfolioSection() {
             <span className="text-[#00ADB5]" style={{ fontWeight: 600 }}>포트폴리오</span>
           </div>
           <h2 className="text-[#14213D] mb-4" style={{ fontSize: "2.5rem", fontWeight: 700 }}>
-            AI 기반 홈페이지 제작 포트폴리오
+            AI 기반 카페·웹사이트 제작 포트폴리오
           </h2>
           <p className="text-[#333333] max-w-3xl mx-auto" style={{ fontSize: "1.125rem", lineHeight: 1.7 }}>
-            수랩은 워드프레스, 웹플로우, AI 빌더 등 다양한 플랫폼을 활용해 기업 맞춤형 홈페이지를 제작합니다.
+            수랩은 워드프레스, 웹플로우, AI 빌더 등 다양한 플랫폼을 활용해 기업 맞춤형 웹사이트를 제작합니다.
           </p>
         </div>
 
@@ -106,7 +111,7 @@ export function PortfolioSection() {
                         <ul className="space-y-3">
                           {capability.items.map((item, itemIndex) => (
                             <li key={itemIndex} className="flex items-start gap-3">
-                              <span className="text-[#00ADB5] mt-1 flex-shrink-0" style={{ fontSize: "1.125rem" }}>●</span>
+                              <Check size={18} className="text-[#00ADB5] mt-1 flex-shrink-0" />
                               <span className="text-[#333333]" style={{ fontSize: "1rem", lineHeight: 1.6 }}>
                                 {item}
                               </span>
@@ -147,3 +152,4 @@ export function PortfolioSection() {
     </section>
   );
 }
+

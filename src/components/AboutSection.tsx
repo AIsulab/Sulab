@@ -28,22 +28,22 @@ export function AboutSection() {
             </div>
 
             <p className="text-[#333333]" style={{ fontSize: "1.125rem", lineHeight: 1.8 }}>
-              수랩(SULAB)은 기술과 창의성을 결합해 AI 마케팅 솔루션을 개발하는 연구소형 기업입니다.
+              수랩(SULAB)은 기술과 창의를 결합해 AI 마케팅 솔루션을 개발하는 연구형 기업입니다.
             </p>
 
             <p className="text-[#333333]" style={{ fontSize: "1rem", lineHeight: 1.8 }}>
-              AI가 사람의 일을 대체하는 것이 아니라, 마케팅의 효율을 높이는 도구가 되도록 연구합니다.
+              AI가 사람을 대체하는 것이 아니라, 마케팅의 효율과 품질을 높이는 도구가 되도록 설계합니다.
             </p>
 
             <div className="pt-4 space-y-4">
               <div className="border-l-4 border-[#00ADB5] pl-4">
-                <p className="text-[#333333]" style={{ fontWeight: 600 }}>창립자</p>
-                <p className="text-[#333333]">이진수 대표</p>
+                <p className="text-[#333333]" style={{ fontWeight: 600 }}>설립 · 본사</p>
+                <p className="text-[#333333]">2025 · 서울</p>
               </div>
 
               <div className="bg-[#E9ECEF] rounded-xl p-6">
                 <p className="text-[#14213D]" style={{ fontSize: "1.25rem", fontWeight: 600, lineHeight: 1.6 }}>
-                  "누구나 AI를 활용해 브랜드를 성장시킬 수 있는 세상 만들기"
+                  “데이터와 AI를 활용해 브랜드 성장을 가속하는 세상을 만듭니다.”
                 </p>
                 <p className="text-[#333333] mt-2">- 비전 -</p>
               </div>
@@ -54,3 +54,4 @@ export function AboutSection() {
     </section>
   );
 }
+
