@@ -19,9 +19,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#00ADB5] rounded-lg flex items-center justify-center">
-                <span className="text-white" style={{ fontWeight: 700 }}>S</span>
-              </div>
+              <img src="/logo.svg" alt="SULAB 로고" className="h-8 w-8 object-contain" />
               <span className="text-[#14213D]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
           </div>
@@ -96,4 +94,3 @@ export function Navigation() {
     </nav>
   );
 }
-

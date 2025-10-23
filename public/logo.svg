@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="40" fill="#0E2648"/>
+  <!-- Stylized SL mark -->
+  <path d="M48 88c0-13.255 10.745-24 24-24h136v24H72a8 8 0 1 0 0 16h64c22.091 0 40 17.909 40 40s-17.909 40-40 40H48v-24h88a16 16 0 0 0 0-32H72c-13.255 0-24-10.745-24-24z" fill="#0E2648"/>
+  <path d="M136 120h32v36a12 12 0 0 0 12 12h52v24h-64c-17.673 0-32-14.327-32-32v-40z" fill="#FF1515"/>
+  <!-- Baseline underline -->
+  <rect x="24" y="168" width="208" height="16" rx="8" fill="#0E2648"/>
+  <!-- Wordmark -->
+  <g fill="#0E2648">
+    <rect x="24" y="192" width="208" height="16" rx="8"/>
+  </g>
+  <title>SULAB Logo</title>
+</svg>
+
