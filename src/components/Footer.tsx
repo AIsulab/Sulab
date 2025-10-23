@@ -5,6 +5,7 @@ export function Footer() {
     <footer className="bg-[#14213D] text-white py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
@@ -25,6 +26,7 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h4 className="mb-4" style={{ fontWeight: 600 }}>바로가기</h4>
             <ul className="space-y-2">
@@ -67,6 +69,7 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Contact & Social */}
           <div>
             <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
             <ul className="space-y-2 mb-4">
@@ -110,6 +113,7 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
@@ -137,3 +141,4 @@ export function Footer() {
     </footer>
   );
 }
+

@@ -109,7 +109,7 @@ export function PortfolioSection() {
                           {capability.title}
                         </h3>
                         <ul className="space-y-3">
-                          {capability.items.map((item, itemIndex) => (
+                          {capabilities[index].items.map((item, itemIndex) => (
                             <li key={itemIndex} className="flex items-start gap-3">
                               <Check size={18} className="text-[#00ADB5] mt-1 flex-shrink-0" />
                               <span className="text-[#333333]" style={{ fontSize: "1rem", lineHeight: 1.6 }}>

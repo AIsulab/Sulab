@@ -22,9 +22,10 @@ export function AboutSection() {
               <div className="inline-block px-4 py-2 bg-[#E9ECEF] rounded-full mb-4">
                 <span className="text-[#00ADB5]" style={{ fontWeight: 600 }}>회사 소개</span>
               </div>
-              <h2 className="text-[#14213D] mb-4" style={{ fontSize: "2.5rem", fontWeight: 700, lineHeight: 1.3 }}>
+              <h2 className="text-[#14213D] mb-2" style={{ fontSize: "2.5rem", fontWeight: 700, lineHeight: 1.3 }}>
                 수랩(SULAB)
               </h2>
+              <p className="text-[#667085]" style={{ fontSize: "0.9375rem" }}>역할: <span style={{ fontWeight: 600 }}>CIO · 디자인 엔지니어</span></p>
             </div>
 
             <p className="text-[#333333]" style={{ fontSize: "1.125rem", lineHeight: 1.8 }}>
@@ -32,18 +33,18 @@ export function AboutSection() {
             </p>
 
             <p className="text-[#333333]" style={{ fontSize: "1rem", lineHeight: 1.8 }}>
-              AI가 사람을 대체하는 것이 아니라, 마케팅의 효율과 품질을 높이는 도구가 되도록 설계합니다.
+              AI는 사람을 대체하는 것이 아니라, 마케팅의 효율과 품질을 높이는 도구가 되도록 설계합니다.
             </p>
 
-            <div className="pt-4 space-y-4">
+            <div className="pt-2 space-y-4">
               <div className="border-l-4 border-[#00ADB5] pl-4">
                 <p className="text-[#333333]" style={{ fontWeight: 600 }}>설립 · 본사</p>
                 <p className="text-[#333333]">2025 · 서울</p>
               </div>
 
-              <div className="bg-[#E9ECEF] rounded-xl p-6">
+              <div className="bg-[#E9ECEF] rounded-xl p-6 mt-2">
                 <p className="text-[#14213D]" style={{ fontSize: "1.25rem", fontWeight: 600, lineHeight: 1.6 }}>
-                  “데이터와 AI를 활용해 브랜드 성장을 가속하는 세상을 만듭니다.”
+                  “데이터와 AI를 활용해 브랜드 성장을 가속합니다.”
                 </p>
                 <p className="text-[#333333] mt-2">- 비전 -</p>
               </div>
