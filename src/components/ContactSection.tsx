@@ -6,13 +6,12 @@ export function ContactSection() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left Side - Info */}
             <div className="bg-gradient-to-br from-[#14213D] to-[#1a2a4d] p-12 text-white">
               <h2 style={{ fontSize: "2.5rem", fontWeight: 700, lineHeight: 1.3 }}>
                 프로젝트 상담 신청하기
               </h2>
               <p className="mt-4 text-[#E9ECEF]" style={{ fontSize: "1.125rem", lineHeight: 1.6 }}>
-                AI 마케팅 전문가가 직접 답변드립니다.
+                AI 마케팅 전문가가 직접 도와드립니다.
               </p>
 
               <div className="mt-12 space-y-6">
@@ -45,7 +44,6 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Right Side - CTA */}
             <div className="p-12 flex items-center justify-center">
               <div className="w-full max-w-md space-y-6">
                 <div className="text-center">
@@ -56,8 +54,8 @@ export function ContactSection() {
                     지금 바로 상담 시작
                   </h3>
                   <p className="text-[#333333] mb-8">
-                    AI 마케팅 솔루션에 대해<br />
-                    궁금한 점을 물어보세요
+                    AI 마케팅 로드맵이 필요하신가요?<br />
+                    궁금하신 점을 물어보세요.
                   </p>
                 </div>
 
@@ -93,3 +91,4 @@ export function ContactSection() {
     </section>
   );
 }
+

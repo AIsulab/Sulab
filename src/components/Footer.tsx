@@ -5,7 +5,6 @@ export function Footer() {
     <footer className="bg-[#14213D] text-white py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-[#00ADB5] rounded-lg flex items-center justify-center">
@@ -15,11 +14,10 @@ export function Footer() {
             </div>
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
               AI로 만드는 마케팅의 미래<br />
-              기술과 창의성의 완벽한 조합
+              기술과 창의의 완벽한 조합
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="mb-4" style={{ fontWeight: 600 }}>바로가기</h4>
             <ul className="space-y-2">
@@ -62,18 +60,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Social */}
           <div>
             <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
             <ul className="space-y-2 mb-4">
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                대표: 이진수
-              </li>
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
                 이메일: sulabstore@naver.com
               </li>
               <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                주소: 전북특별자치도 전주시
+                주소: 서울특별시 (업데이트 예정)
               </li>
             </ul>
             <div className="flex gap-3">
@@ -109,7 +103,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
@@ -137,3 +130,4 @@ export function Footer() {
     </footer>
   );
 }
+
