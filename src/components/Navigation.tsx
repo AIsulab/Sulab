@@ -65,6 +65,7 @@ export function Navigation() {
           <button
             className="md:hidden text-[#14213D]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

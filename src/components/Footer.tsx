@@ -1,4 +1,4 @@
-﻿import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -21,13 +21,13 @@ export function Footer() {
               <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-              SULAB은 AI 기술로 홈페이지 제작과 마케팅을 자동화하는 연구소형 기업입니다.
+              SULAB은 AI와 데이터로 브랜드 성장을 설계하는 마케팅 스튜디오입니다.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>빠른 링크</h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>바로가기</h4>
             <ul className="space-y-2">
               <li>
                 <button
@@ -35,7 +35,7 @@ export function Footer() {
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
-                  회사 소개
+                  회사소개
                 </button>
               </li>
               <li>
@@ -72,12 +72,8 @@ export function Footer() {
           <div>
             <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
             <ul className="space-y-2 mb-4">
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                이메일: sulabstore@naver.com
-              </li>
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                운영시간: 평일 09:00 - 18:00 (주말/공휴일 휴무)
-              </li>
+              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>이메일: sulabstore@naver.com</li>
+              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>운영 시간: 평일 09:00 - 18:00</li>
             </ul>
             <div className="flex gap-3">
               <a
@@ -140,5 +136,4 @@ export function Footer() {
     </footer>
   );
 }
-
 
