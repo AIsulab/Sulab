@@ -1,10 +1,12 @@
-import { FormEvent } from "react";
-import { AlertCircle, KeyRound, Loader2, Search } from "lucide-react";
+import { FormEvent, useState } from "react";
+import { AlertCircle, Eye, EyeOff, KeyRound, Loader2, Search } from "lucide-react";
 import { useYouTubeAnalytics } from "../contexts/YouTubeAnalyticsContext";
 
 export function HeroSection() {
   const {
+    apiKey,
     apiKeyInput,
+    hasStoredKey,
     setApiKeyInput,
     searchTerm,
     setSearchTerm,
@@ -15,11 +17,10 @@ export function HeroSection() {
     setError,
   } = useYouTubeAnalytics();
 
+  const [isApiKeyVisible, setIsApiKeyVisible] = useState(false);
+
   const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleSubmit = (event: FormEvent) => {
@@ -27,8 +28,18 @@ export function HeroSection() {
     handleSearch();
   };
 
+  const handleToggleApiKeyVisible = () => {
+    if (!isApiKeyVisible && !apiKeyInput && hasStoredKey) {
+      setApiKeyInput(apiKey);
+    }
+    setIsApiKeyVisible((prev) => !prev);
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#14213D] via-[#1a2a4d] to-[#14213D] pt-16">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#14213D] via-[#1a2a4d] to-[#14213D] pt-16"
+    >
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -87,14 +98,14 @@ export function HeroSection() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-[2fr_1fr]">
+              <div className="grid gap-4 md:grid-cols-[2fr_auto]">
                 <div className="relative">
                   <label className="block text-sm font-semibold text-[#14213D] mb-2">
                     유튜브 API 키
                   </label>
                   <KeyRound className="w-5 h-5 text-[#8D99AE] absolute left-3 top-[3.1rem]" />
                   <input
-                    type="text"
+                    type={isApiKeyVisible ? "text" : "password"}
                     value={apiKeyInput}
                     onChange={(event) => {
                       setApiKeyInput(event.target.value);
@@ -102,25 +113,38 @@ export function HeroSection() {
                         setError(null);
                       }
                     }}
-                    placeholder="예: AIza..."
-                    className="w-full border border-[#E9ECEF] rounded-xl py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
+                    placeholder={
+                      hasStoredKey
+                        ? "저장된 API 키 사용 중입니다. 변경하려면 새 키를 입력하세요."
+                        : "예: AIza..."
+                    }
+                    className="w-full border border-[#E9ECEF] rounded-xl py-3 pl-10 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
+                    autoComplete="off"
                   />
+                  <button
+                    type="button"
+                    onClick={handleToggleApiKeyVisible}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#8D99AE] hover:text-[#14213D]"
+                    aria-label={isApiKeyVisible ? "API 키 숨기기" : "API 키 표시"}
+                  >
+                    {isApiKeyVisible ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
                   <p className="mt-2 text-xs text-[#64748B]">
-                    기본 API 키가 미리 입력되어 있습니다. 필요하다면 본인의 키로 교체하세요.
+                    입력한 키는 브라우저에 암호화되지 않은 상태로 저장됩니다. 필요 시 새 키로 교체하세요.
                   </p>
                 </div>
                 <div className="flex items-end gap-3">
                   <button
                     type="button"
                     onClick={handleSaveApiKey}
-                    className="w-full sm:w-auto px-5 py-3 bg-[#14213D] text-white rounded-xl font-semibold hover:bg-[#1A2A4D] transition-colors"
+                    className="px-5 py-3 bg-[#14213D] text-white rounded-xl font-semibold hover:bg-[#1A2A4D] transition-colors"
                   >
                     키 저장
                   </button>
                 </div>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-[2fr_1fr]">
+              <div className="grid gap-4 md:grid-cols-[2fr_auto]">
                 <div className="relative">
                   <label className="block text-sm font-semibold text-[#14213D] mb-2">
                     검색어
@@ -201,3 +225,4 @@ export function HeroSection() {
     </section>
   );
 }
+

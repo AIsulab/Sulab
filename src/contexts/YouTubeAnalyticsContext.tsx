@@ -188,6 +188,7 @@ export function buildVideoUrl(videoId: string): string {
 interface YouTubeAnalyticsContextValue {
   apiKey: string;
   apiKeyInput: string;
+  hasStoredKey: boolean;
   setApiKeyInput: (value: string) => void;
   searchTerm: string;
   setSearchTerm: (value: string) => void;
@@ -219,8 +220,9 @@ export function YouTubeAnalyticsProvider({
 }: {
   children: ReactNode;
 }) {
-  const [apiKey, setApiKey] = useState(defaultApiKey);
-  const [apiKeyInput, setApiKeyInput] = useState(defaultApiKey);
+  const [apiKey, setApiKey] = useState("");
+  const [apiKeyInput, setApiKeyInput] = useState("");
+  const [hasStoredKey, setHasStoredKey] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [durationFilter, setDurationFilter] =
     useState<DurationFilter>("all");
@@ -240,12 +242,13 @@ export function YouTubeAnalyticsProvider({
     const savedKey = localStorage.getItem("youtubeApiKey") ?? "";
     if (savedKey.trim()) {
       setApiKey(savedKey);
-      setApiKeyInput(savedKey);
-    } else {
-      setApiKey(defaultApiKey);
-      setApiKeyInput(defaultApiKey);
-      localStorage.setItem("youtubeApiKey", defaultApiKey);
+      setHasStoredKey(true);
+      return;
     }
+
+    setApiKey(defaultApiKey);
+    setHasStoredKey(true);
+    localStorage.setItem("youtubeApiKey", defaultApiKey);
   }, []);
 
   const filteredVideos = useMemo(() => {
@@ -265,10 +268,16 @@ export function YouTubeAnalyticsProvider({
 
   const handleSaveApiKey = () => {
     const trimmedKey = apiKeyInput.trim();
-    setApiKey(trimmedKey);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("youtubeApiKey", trimmedKey);
+    if (!trimmedKey) {
+      setError("API 키를 입력해주세요.");
+      return;
     }
+
+    setApiKey(trimmedKey);
+    setHasStoredKey(true);
+    localStorage.setItem("youtubeApiKey", trimmedKey);
+    setApiKeyInput("");
+    setError(null);
   };
 
   const handleExportExcel = () => {
@@ -300,11 +309,13 @@ export function YouTubeAnalyticsProvider({
   };
 
   const handleSearch = async () => {
+    const trimmedTerm = searchTerm.trim();
     if (!apiKey) {
       setError("먼저 유튜브 API 키를 저장해주세요.");
       return;
     }
-    if (!searchTerm.trim()) {
+
+    if (!trimmedTerm) {
       setError("검색어를 입력해주세요.");
       return;
     }
@@ -317,7 +328,7 @@ export function YouTubeAnalyticsProvider({
       const searchParams = new URLSearchParams({
         key: apiKey,
         part: "snippet",
-        q: searchTerm.trim(),
+        q: trimmedTerm,
         type: "video",
         maxResults: "25",
         order: "date",
@@ -468,6 +479,7 @@ export function YouTubeAnalyticsProvider({
   const value: YouTubeAnalyticsContextValue = {
     apiKey,
     apiKeyInput,
+    hasStoredKey,
     setApiKeyInput,
     searchTerm,
     setSearchTerm,

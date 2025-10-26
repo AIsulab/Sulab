@@ -2,7 +2,6 @@ import {
   AlertCircle,
   Clock,
   Download,
-  KeyRound,
   LayoutGrid,
   Search,
   Table,
@@ -20,10 +19,10 @@ import {
   type TimeFilter,
 } from "../contexts/YouTubeAnalyticsContext";
 
-const viewModeLabels = {
+const viewModeLabels: Record<"cards" | "table", string> = {
   cards: "카드 보기",
   table: "테이블 보기",
-} as const;
+};
 
 function renderRatioBadge(ratioLevel: number | null) {
   if (!ratioLevel) {
@@ -58,11 +57,8 @@ function renderRatioBadge(ratioLevel: number | null) {
 
 export function YouTubeAnalyticsSection() {
   const {
-    apiKey,
-    apiKeyInput,
-    setApiKeyInput,
+    hasStoredKey,
     searchTerm,
-    setSearchTerm,
     durationFilter,
     setDurationFilter,
     timeFilter,
@@ -76,10 +72,13 @@ export function YouTubeAnalyticsSection() {
     setError,
     filteredVideos,
     lastUpdated,
-    handleSaveApiKey,
     handleSearch,
     handleExportExcel,
   } = useYouTubeAnalytics();
+
+  const scrollToHero = () => {
+    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="youtube-analytics" className="py-20 bg-[#F8FAFB]">
@@ -99,70 +98,71 @@ export function YouTubeAnalyticsSection() {
           </h2>
           <p className="text-[#333333] max-w-3xl mx-auto leading-relaxed">
             유튜브 API를 활용해 영상 길이, 업로드 시점, 구독자 대비 조회수 비율 등
-            핵심 지표를 한 번에 확인하고, 카드뷰와 테이블뷰를 자유롭게 전환한 뒤
-            엑셀로 저장할 수 있습니다. 상단 히어로 배너에서도 즉시 검색할 수
-            있습니다.
+            핵심 지표를 한 번에 확인할 수 있습니다. 카드형과 테이블형 보기 전환,
+            엑셀 저장까지 모두 지원합니다.
           </p>
         </div>
 
         <div className="bg-white border border-[#E0E7EF] rounded-3xl p-8 shadow-sm space-y-8">
           <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-            <div className="space-y-4">
-              <label className="block text-sm font-semibold text-[#14213D]">
-                유튜브 API 키
-              </label>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <div className="relative flex-1">
-                  <KeyRound className="w-5 h-5 text-[#8D99AE] absolute left-3 top-3" />
-                  <input
-                    type="text"
-                    value={apiKeyInput}
-                    onChange={(event) => setApiKeyInput(event.target.value)}
-                    placeholder="Google Cloud Console에서 발급받은 API 키를 입력하세요"
-                    className="w-full border border-[#E9ECEF] rounded-xl py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-                  />
+            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6">
+              <h3 className="text-[#14213D] font-semibold text-lg mb-3">
+                현재 검색 상태
+              </h3>
+              <dl className="space-y-2 text-sm text-[#475569]">
+                <div className="flex items-center justify-between">
+                  <dt className="font-medium text-[#14213D]">API 키 저장 여부</dt>
+                  <dd>{hasStoredKey ? "저장됨" : "미저장"}</dd>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleSaveApiKey}
-                  className="px-6 py-3 bg-[#00ADB5] text-white rounded-xl font-semibold hover:bg-[#00929A] transition-colors"
-                >
-                  키 저장
-                </button>
-              </div>
-              {apiKey ? (
-                <p className="text-xs text-[#00ADB5]">
-                  저장된 API 키가 사용됩니다. 필요 시 새 키로 갱신하세요.
-                </p>
-              ) : (
-                <p className="text-xs text-[#FF6B6B] flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  API 키를 저장해야 검색을 실행할 수 있습니다.
-                </p>
-              )}
+                <div className="flex items-center justify-between">
+                  <dt className="font-medium text-[#14213D]">검색어</dt>
+                  <dd>{searchTerm.trim() ? searchTerm : "미입력"}</dd>
+                </div>
+                <div className="flex items-center justify-between">
+                  <dt className="font-medium text-[#14213D]">업데이트 시간</dt>
+                  <dd>
+                    {lastUpdated
+                      ? lastUpdated.toLocaleTimeString("ko-KR")
+                      : "검색 대기 중"}
+                  </dd>
+                </div>
+              </dl>
+              <button
+                type="button"
+                onClick={scrollToHero}
+                className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg border border-[#14213D] text-[#14213D] hover:bg-[#14213D] hover:text-white transition-colors"
+              >
+                검색 조건 변경하기
+              </button>
             </div>
 
-            <div className="space-y-4">
-              <label className="block text-sm font-semibold text-[#14213D]">
-                검색어
-              </label>
-              <div className="relative">
-                <Search className="w-5 h-5 text-[#8D99AE] absolute left-3 top-3" />
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(event) => setSearchTerm(event.target.value)}
-                  placeholder="예: 숏폼 마케팅, 브이로그 촬영법, 구독자 성장 전략"
-                  className="w-full border border-[#E9ECEF] rounded-xl py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
-                />
-              </div>
+            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl p-6">
+              <h3 className="text-[#14213D] font-semibold text-lg mb-3">
+                빠른 실행
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                상단 히어로 섹션에서 API 키와 검색어를 입력한 뒤 “유튜브 검색 실행”
+                버튼을 누르면 이곳에 최신 결과가 표시됩니다. 필터 조정 후
+                <span className="font-semibold text-[#14213D]"> “검색 다시 실행”</span>을
+                눌러 반영할 수 있습니다.
+              </p>
               <button
                 type="button"
                 onClick={handleSearch}
                 disabled={isLoading}
-                className="w-full px-6 py-3 bg-[#14213D] text-white rounded-xl font-semibold hover:bg-[#1A2A4D] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-2 rounded-lg bg-[#14213D] text-white font-semibold hover:bg-[#1A2A4D] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {isLoading ? "검색 중..." : "유튜브 검색 실행"}
+                {isLoading ? (
+                  <>
+                    <Search className="w-4 h-4 animate-pulse" />
+                    검색 중...
+                  </>
+                ) : (
+                  <>
+                    <Search className="w-4 h-4" />
+                    검색 다시 실행
+                  </>
+                )}
               </button>
             </div>
           </div>
