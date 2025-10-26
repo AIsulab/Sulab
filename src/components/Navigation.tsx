@@ -16,25 +16,34 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center gap-2">
               <img
-                src="/logo.png"
-                onError={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
+                src="/logo.png?v=2025102601"
+                onError={(event) => {
+                  const img = event.currentTarget as HTMLImageElement;
                   img.onerror = null;
-                  img.src = "/logo.svg";
+                  img.src = "/logo.svg?v=2025102601";
                 }}
                 alt="SULAB 로고"
                 className="h-8 w-8 object-contain"
               />
-              <span className="text-[#14213D]" style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
+              <span
+                className="text-[#14213D]"
+                style={{ fontSize: "1.25rem", fontWeight: 700 }}
+              >
+                SULAB
+              </span>
             </div>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
+            <button
+              onClick={() => scrollToSection("youtube-analytics")}
+              className="text-[#333333] hover:text-[#00ADB5] transition-colors"
+            >
+              유튜브 분석
+            </button>
             <button
               onClick={() => scrollToSection("about")}
               className="text-[#333333] hover:text-[#00ADB5] transition-colors"
@@ -61,7 +70,6 @@ export function Navigation() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-[#14213D]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,9 +79,14 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4 space-y-2">
+            <button
+              onClick={() => scrollToSection("youtube-analytics")}
+              className="block w-full text-left px-4 py-2 text-[#333333] hover:bg-[#E9ECEF] rounded-lg transition-colors"
+            >
+              유튜브 분석
+            </button>
             <button
               onClick={() => scrollToSection("about")}
               className="block w-full text-left px-4 py-2 text-[#333333] hover:bg-[#E9ECEF] rounded-lg transition-colors"
@@ -104,4 +117,3 @@ export function Navigation() {
     </nav>
   );
 }
-

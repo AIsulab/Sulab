@@ -5,33 +5,54 @@ export function Footer() {
     <footer className="bg-[#14213D] text-white py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/logo.png"
-                onError={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
+                src="/logo.svg?v=2025102601"
+                onError={(event) => {
+                  const img = event.currentTarget as HTMLImageElement;
                   img.onerror = null;
-                  img.src = "/logo.svg";
+                  img.src = "/logo.png?v=2025102601";
                 }}
                 alt="SULAB 로고"
                 className="h-8 w-8 object-contain"
               />
               <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
             </div>
-            <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-              SULAB은 AI와 데이터로 브랜드 성장을 설계하는 마케팅 스튜디오입니다.
+            <p
+              className="text-[#E9ECEF]"
+              style={{ fontSize: "0.875rem", lineHeight: 1.6 }}
+            >
+              SULAB은 AI와 데이터 기반으로 브랜드의 성장을 설계하는 마케팅
+              스튜디오입니다.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>바로가기</h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>
+              바로가기
+            </h4>
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("youtube-analytics")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
+                  style={{ fontSize: "0.875rem" }}
+                >
+                  유튜브 분석
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
@@ -40,7 +61,11 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
@@ -49,7 +74,11 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("portfolio")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
@@ -58,7 +87,11 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
                   style={{ fontSize: "0.875rem" }}
                 >
@@ -68,12 +101,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Social */}
           <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>연락처</h4>
+            <h4 className="mb-4" style={{ fontWeight: 600 }}>
+              연락처
+            </h4>
             <ul className="space-y-2 mb-4">
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>이메일: sulabstore@naver.com</li>
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>운영 시간: 평일 09:00 - 18:00</li>
+              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
+                이메일: sulabstore@naver.com
+              </li>
+              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
+                운영 시간: 주중 09:00 - 18:00
+              </li>
             </ul>
             <div className="flex gap-3">
               <a
@@ -108,7 +146,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
