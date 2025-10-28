@@ -49,9 +49,7 @@ export const YouTubeCard = ({ video }: YouTubeCardProps) => {
           </p>
         </div>
         <div className="mt-auto flex items-center gap-3 text-xs font-semibold text-slate-500">
-          <span>
-            {numberFormatter.format(video.viewCount)}{"\u0020\uc870\ud68c\uc218"}
-          </span>
+          <span>{numberFormatter.format(video.viewCount)} 조회수</span>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
           <span>{dateFormatter.format(new Date(video.publishedAt))}</span>
         </div>

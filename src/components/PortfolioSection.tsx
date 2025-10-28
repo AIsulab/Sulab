@@ -1,24 +1,24 @@
 const CASE_STUDIES = [
   {
-    category: "\ud504\ub79c\ucc28\uc774\uc988\u0020\ub7f0\uce6d",
-    client: "\ube0c\ub79c\ub4dc\u0020\u0041",
-    metric: "\uad6c\ub3c5\uc790\u0020\u0034\u0032\u0030\u0025\u0020\uc131\uc7a5",
+    category: "프랜차이즈 런칭",
+    client: "브랜드 A",
+    metric: "구독자 420% 성장",
     result:
-      "\ube0c\ub79c\ub4dc\u0020\uc2a4\ud1a0\ub9ac\ud154\ub9c1\uacfc\u0020\uc20f\ud3fc\u0020\uc2dc\ub9ac\uc988\ub97c\u0020\ubcd1\ud589\ud558\uc5ec\u0020\u0036\uc8fc\u0020\ub9cc\uc5d0\u0020\ucd08\uae30\u0020\uad6c\ub3c5\uc790\u0020\u0031\ub9cc\u0020\uba85\uc744\u0020\ub3cc\ud30c\ud588\uc2b5\ub2c8\ub2e4\u002e",
+      "브랜드 스토리텔링과 숏폼 시리즈를 병행하여 6주 만에 초기 구독자 1만 명을 돌파했습니다.",
   },
   {
-    category: "\uc804\ud658\u0020\ucea0\ud398\uc778",
-    client: "\uc774\ucee4\uba38\uc2a4\u0020\u0044\u0032\u0043",
-    metric: "\u0052\u004f\u0041\u0053\u0020\u0033\u002e\u0035\ubc30\u0020\uac1c\uc120",
+    category: "전환 캠페인",
+    client: "이커머스 D2C",
+    metric: "ROAS 3.5배 개선",
     result:
-      "\uac80\uc0c9\u0020\uc758\ub3c4\uc5d0\u0020\ub9de\ub294\u0020\ucf58\ud150\uce20\uc640\u0020\ub79c\ub529\u0020\ucd5c\uc801\ud654\ub97c\u0020\ud1b5\ud574\u0020\uad11\uace0\u0020\uc758\uc874\ub3c4\ub97c\u0020\ub0ae\ucd94\uace0\u0020\uc790\uc0dd\u0020\ucc44\ub110\uc744\u0020\uad6c\ucd95\ud588\uc2b5\ub2c8\ub2e4\u002e",
+      "검색 의도에 맞는 콘텐츠와 랜딩 최적화를 통해 광고 의존도를 낮추고 자생 채널을 구축했습니다.",
   },
   {
-    category: "\ucf58\ud150\uce20\u0020\ub9ac\ub274\uc5bc",
-    client: "\ud504\ub85c\ub355\ud2b8\u0020\u0053\u0061\u0061\u0053",
-    metric: "\ub9ac\ub4dc\u0020\uc804\ud658\u0020\u0036\u0038\u0025\u0020\uc99d\uac00",
+    category: "콘텐츠 리뉴얼",
+    client: "프로덕트 SaaS",
+    metric: "리드 전환 68% 증가",
     result:
-      "\ud29c\ud1a0\ub9ac\uc5bc\u0020\uae30\ubc18\u0020\uc601\uc0c1\uacfc\u0020\uc6e8\ube44\ub098\u0020\ud074\ub9bd\uc744\u0020\uc7ac\uac00\uacf5\ud558\uc5ec\u0020\uc720\uc785\u0020\ub300\ube44\u0020\ub9ac\ub4dc\u0020\ud68d\ub4dd\ub960\uc744\u0020\ud070\u0020\ud3ed\uc73c\ub85c\u0020\uac1c\uc120\ud588\uc2b5\ub2c8\ub2e4\u002e",
+      "튜토리얼 기반 영상과 웨비나 클립을 재가공하여 유입 대비 리드 획득률을 큰 폭으로 개선했습니다.",
   },
 ];
 
@@ -31,10 +31,10 @@ export const PortfolioSection = () => {
             Portfolio Highlights
           </span>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            {"\uc2e4\ud5d8\uc73c\ub85c\u0020\uac80\uc99d\ud55c\u0020\uc131\uc7a5\u0020\uc0ac\ub840"}
+            실험으로 검증한 성장 사례
           </h2>
           <p className="text-base text-slate-600">
-            {"\uc2e4\ud5d8\u0020\uc124\uacc4\ubd80\ud130\u0020\ud06c\ub9ac\uc5d0\uc774\ud2f0\ube0c\u0020\uc81c\uc791\u002c\u0020\uc131\uacfc\u0020\uce21\uc815\uae4c\uc9c0\u0020\ud300\uc774\u0020\uc9c1\uc811\u0020\uc2e4\ud589\ud558\uba70\u0020\ub9cc\ub4e0\u0020\uacb0\uacfc\uc785\ub2c8\ub2e4\u002e"}
+            실험 설계부터 크리에이티브 제작, 성과 측정까지 팀이 직접 실행하며 만든 결과입니다.
           </p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">

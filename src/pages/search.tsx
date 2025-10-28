@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import Head from "next/head";
 import { FormEvent, useMemo, useState } from "react";
 import YouTubeCard, { YouTubeVideo } from "../components/YouTubeCard";
@@ -14,8 +13,7 @@ const SearchPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const placeholder = useMemo(
-    () =>
-      "\uc608\u0029\u0020\uce74\ud398\u0020\ucc3d\uc5c5\u0020\ube0c\uc774\ub85c\uadf8\u002c\u0020\ud53c\ubd80\uacfc\u0020\ub9c8\ucf00\ud305\u002c\u0020\u0053\u0061\u0061\u0053\u0020\uc628\ubcf4\ub529",
+    () => "예) 카페 창업 브이로그, 피부과 마케팅, SaaS 온보딩",
     []
   );
 
@@ -25,14 +23,14 @@ const SearchPage = () => {
 
     const trimmedQuery = query.trim();
     if (!trimmedQuery) {
-      setError("\uac80\uc0c9\uc5b4\ub97c\u0020\uc785\ub825\ud574\uc8fc\uc138\uc694\u002e");
+      setError("검색어를 입력해주세요.");
       setVideos([]);
       return;
     }
 
     if (!apiKey) {
       setError(
-        "\u0059\u006f\u0075\u0054\u0075\u0062\u0065\u0020\u0041\u0050\u0049\u0020\ud0a4\uac00\u0020\uc124\uc815\ub418\uc9c0\u0020\uc54a\uc558\uc2b5\ub2c8\ub2e4\u002e\u0020\uad00\ub9ac\uc790\uc5d0\uac8c\u0020\ubb38\uc758\ud574\uc8fc\uc138\uc694\u002e"
+        "YouTube API 키가 설정되지 않았습니다. 관리자에게 문의해주세요."
       );
       setVideos([]);
       return;
@@ -56,7 +54,7 @@ const SearchPage = () => {
 
       if (!searchResponse.ok) {
         throw new Error(
-          "\uac80\uc0c9\u0020\uc694\uccad\uc5d0\u0020\uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4\u002e\u0020\uc7a0\uc2dc\u0020\ud6c4\u0020\ub2e4\uc2dc\u0020\uc2dc\ub3c4\ud574\uc8fc\uc138\uc694\u002e"
+          "검색 요청에 실패했습니다. 잠시 후 다시 시도해주세요."
         );
       }
 
@@ -83,7 +81,7 @@ const SearchPage = () => {
       );
 
       if (!detailResponse.ok) {
-        throw new Error("\uc601\uc0c1\u0020\uc0c1\uc138\u0020\uc815\ubcf4\ub97c\u0020\ubd88\ub7ec\uc624\uc9c0\u0020\ubabb\ud588\uc2b5\ub2c8\ub2e4\u002e");
+        throw new Error("영상 상세 정보를 불러오지 못했습니다.");
       }
 
       const detailData = await detailResponse.json();
@@ -91,11 +89,10 @@ const SearchPage = () => {
         ? detailData.items.map((item: any) => ({
             id: item.id,
             title:
-              item.snippet?.title ??
-              "\uc81c\ubaa9\uc744\u0020\ubd88\ub7ec\uc624\uc9c0\u0020\ubabb\ud588\uc2b5\ub2c8\ub2e4",
+              item.snippet?.title ?? "제목을 불러오지 못했습니다",
             channelTitle:
               item.snippet?.channelTitle ??
-              "\ucc44\ub110\u0020\uc815\ubcf4\ub97c\u0020\ubd88\ub7ec\uc624\uc9c0\u0020\ubabb\ud588\uc2b5\ub2c8\ub2e4",
+              "채널 정보를 불러오지 못했습니다",
             viewCount: Number(item.statistics?.viewCount ?? 0),
             publishedAt: item.snippet?.publishedAt ?? new Date().toISOString(),
             thumbnailUrl:
@@ -112,7 +109,7 @@ const SearchPage = () => {
       const message =
         fetchError instanceof Error
           ? fetchError.message
-          : "\uc54c\u0020\uc218\u0020\uc5c6\ub294\u0020\uc624\ub958\uac00\u0020\ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4\u002e";
+          : "알 수 없는 오류가 발생했습니다.";
       setError(message);
       setVideos([]);
     } finally {
@@ -123,20 +120,15 @@ const SearchPage = () => {
   return (
     <>
       <Head>
-        <title>
-          {"\uc720\ud29c\ube0c\u0020\uc778\uc0ac\uc774\ud2b8\u0020\uac80\uc0c9\u0020\u007c\u0020\u0053\u0055\u004c\u0041\u0042"}
-        </title>
+        <title>유튜브 인사이트 검색 | SULAB</title>
         <meta
           name="description"
-          content="\u0053\u0055\u004c\u0041\u0042\uc758\u0020\uc720\ud29c\ube0c\u0020\uc778\uc0ac\uc774\ud2b8\u0020\uac80\uc0c9\uc73c\ub85c\u0020\uc2dc\uc7a5\u0020\ud750\ub984\uc744\u0020\ube60\ub974\uac8c\u0020\ud30c\uc545\ud558\uc138\uc694\u002e\u0020\uc870\ud68c\uc218\u002c\u0020\ucc44\ub110\u002c\u0020\uac8c\uc2dc\uc77c\uc744\u0020\ud55c\ub208\uc5d0\u0020\ube44\uad50\ud560\u0020\uc218\u0020\uc788\uc2b5\ub2c8\ub2e4\u002e"
+          content="SULAB의 유튜브 인사이트 검색으로 시장 흐름을 빠르게 파악하세요. 조회수, 채널, 게시일을 한눈에 비교할 수 있습니다."
         />
-        <meta
-          property="og:title"
-          content="\uc720\ud29c\ube0c\u0020\uc778\uc0ac\uc774\ud2b8\u0020\uac80\uc0c9\u0020\u007c\u0020\u0053\u0055\u004c\u0041\u0042"
-        />
+        <meta property="og:title" content="유튜브 인사이트 검색 | SULAB" />
         <meta
           property="og:description"
-          content="\uc2e4\uc2dc\uac04\u0020\uc720\ud29c\ube0c\u0020\ub370\uc774\ud130\ub97c\u0020\ubc14\ud0d5\uc73c\ub85c\u0020\uacbd\uc7c1\u0020\ucf58\ud150\uce20\ub97c\u0020\ubd84\uc11d\ud558\uace0\u0020\uc804\ub7b5\uc744\u0020\uc218\ub9bd\ud558\uc138\uc694\u002e"
+          content="실시간 유튜브 데이터를 바탕으로 경쟁 콘텐츠를 분석하고 전략을 수립하세요."
         />
         <meta property="og:image" content="/og-image.png" />
       </Head>
@@ -145,18 +137,18 @@ const SearchPage = () => {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-3">
               <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                {"\uc720\ud29c\ube0c\u0020\uc778\uc0ac\uc774\ud2b8\u0020\uac80\uc0c9"}
+                유튜브 인사이트 검색
               </h1>
               <p className="text-sm text-slate-500 sm:text-base">
-                {"\ud0a4\uc6cc\ub4dc\u0020\uae30\ubc18\uc73c\ub85c\u0020\uc2e4\uc2dc\uac04\u0020\ucf58\ud150\uce20\u0020\ud2b8\ub80c\ub4dc\ub97c\u0020\ud655\uc778\ud558\uace0\u002c\u0020\ucc44\ub110\u0020\uc804\ub7b5\uc744\u0020\ube60\ub974\uac8c\u0020\uc218\ub9bd\ud558\uc138\uc694\u002e"}
+                키워드 기반으로 실시간 콘텐츠 트렌드를 확인하고, 채널 전략을 빠르게 수립하세요.
               </p>
             </div>
-            <Link
+            <a
               href="/"
               className="inline-flex items-center justify-center rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 hover:border-sky-400 hover:text-sky-600 transition"
             >
-              {"\uba54\uc778\uc73c\ub85c\u0020\ub3cc\uc544\uac00\uae30"}
-            </Link>
+              메인으로 돌아가기
+            </a>
           </div>
 
           <form
@@ -165,7 +157,7 @@ const SearchPage = () => {
           >
             <label className="flex flex-col gap-2">
               <span className="text-sm font-semibold text-slate-700">
-                {"\uac80\uc0c9\uc5b4"}
+                검색어
               </span>
               <input
                 type="text"
@@ -186,10 +178,10 @@ const SearchPage = () => {
                 disabled={isLoading}
                 className="inline-flex w-full items-center justify-center rounded-xl bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                {isLoading ? "\uac80\uc0c9\u0020\uc911\u002e\u002e\u002e" : "\uac80\uc0c9\u0020\uc2e4\ud589"}
+                {isLoading ? "검색 중..." : "검색 실행"}
               </button>
               <span className="text-xs text-slate-400">
-                {"\u0041\u0050\u0049\u0020\ud638\ucd9c\uc740\u0020\u0047\u006f\u006f\u0067\u006c\u0065\u0020\u0059\u006f\u0075\u0054\u0075\u0062\u0065\u0020\u0044\u0061\u0074\u0061\u0020\u0041\u0050\u0049\u0020\u0076\u0033\ub97c\u0020\uc0ac\uc6a9\ud569\ub2c8\ub2e4\u002e"}
+                API 호출은 Google YouTube Data API v3를 사용합니다.
               </span>
             </div>
           </form>
@@ -202,7 +194,7 @@ const SearchPage = () => {
 
           {!error && isSubmitted && !isLoading && videos.length === 0 && (
             <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 px-6 py-12 text-center text-sm text-slate-500">
-              {"\uc544\uc9c1\u0020\uacb0\uacfc\uac00\u0020\uc5c6\uc2b5\ub2c8\ub2e4\u002e\u0020\ub2e4\ub978\u0020\ud0a4\uc6cc\ub4dc\ub85c\u0020\ub2e4\uc2dc\u0020\uac80\uc0c9\ud574\ubcf4\uc138\uc694\u002e"}
+              아직 결과가 없습니다. 다른 키워드로 다시 검색해보세요.
             </div>
           )}
 
