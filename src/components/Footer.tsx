@@ -1,176 +1,35 @@
-import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import Link from "next/link";
 
-export function Footer() {
+export const Footer = () => {
   return (
-    <footer className="bg-[#14213D] text-white py-12">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src="/logo.svg?v=2025102601"
-                onError={(event) => {
-                  const img = event.currentTarget as HTMLImageElement;
-                  img.onerror = null;
-                  img.src = "/logo.png?v=2025102601";
-                }}
-                alt="SULAB 로고"
-                className="h-8 w-8 object-contain"
-              />
-              <span style={{ fontSize: "1.25rem", fontWeight: 700 }}>SULAB</span>
-            </div>
-            <p
-              className="text-[#E9ECEF]"
-              style={{ fontSize: "0.875rem", lineHeight: 1.6 }}
-            >
-              SULAB은 AI와 데이터 기반으로 브랜드의 성장을 설계하는 마케팅
-              스튜디오입니다.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>
-              바로가기
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("youtube-analytics")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  유튜브 분석
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  회사소개
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("services")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  서비스
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("portfolio")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  포트폴리오
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  문의하기
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4" style={{ fontWeight: 600 }}>
-              연락처
-            </h4>
-            <ul className="space-y-2 mb-4">
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                이메일: sulabstore@naver.com
-              </li>
-              <li className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-                운영 시간: 주중 09:00 - 18:00
-              </li>
-            </ul>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={16} />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube size={16} />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={16} />
-              </a>
-            </div>
+    <footer className="bg-slate-950 text-slate-200">
+      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
+        <div className="space-y-3">
+          <h3 className="text-2xl font-semibold text-white">SULAB</h3>
+          <p className="text-sm text-slate-400">
+            {"\u0041\u0049\u0020\ub9c8\ucf00\ud305\u0020\uc804\ub7b5\u0020\uc5f0\uad6c\uc18c\u002e\u0020\ub370\uc774\ud130\uc640\u0020\ud06c\ub9ac\uc5d0\uc774\ud2f0\ube0c\ub85c\u0020\ube0c\ub79c\ub4dc\uc758\u0020\uc9c0\uc18d\u0020\uac00\ub2a5\ud55c\u0020\uc131\uc7a5\uc744\u0020\uc124\uacc4\ud569\ub2c8\ub2e4\u002e"}
+          </p>
+          <div className="text-xs text-slate-500">
+            {"\u00a9"} {new Date().getFullYear()} SULAB. All rights reserved.
           </div>
         </div>
-
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#E9ECEF]" style={{ fontSize: "0.875rem" }}>
-              © 2025 SULAB. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                style={{ fontSize: "0.875rem" }}
-              >
-                이용약관
-              </a>
-              <a
-                href="#"
-                className="text-[#E9ECEF] hover:text-[#00ADB5] transition-colors"
-                style={{ fontSize: "0.875rem" }}
-              >
-                개인정보처리방침
-              </a>
-            </div>
-          </div>
+        <div className="flex flex-wrap gap-4 text-sm">
+          <Link
+            href="/search"
+            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl px-5 py-2 transition"
+          >
+            {"\uc720\ud29c\ube0c\u0020\uc778\uc0ac\uc774\ud2b8\u0020\uac80\uc0c9"}
+          </Link>
+          <a
+            href="mailto:hello@sulab.ai"
+            className="rounded-xl border border-sky-400/40 px-5 py-2 font-semibold text-sky-200 hover:border-sky-400 hover:text-white transition"
+          >
+            {"\ud504\ub85c\uc81d\ud2b8\u0020\ubb38\uc758"}
+          </a>
         </div>
       </div>
     </footer>
   );
-}
+};
 
+export default Footer;

@@ -1,155 +1,66 @@
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Monitor, Zap, Sparkles, ShoppingCart, Settings, Check } from "lucide-react";
+const CASE_STUDIES = [
+  {
+    category: "\ud504\ub79c\ucc28\uc774\uc988\u0020\ub7f0\uce6d",
+    client: "\ube0c\ub79c\ub4dc\u0020\u0041",
+    metric: "\uad6c\ub3c5\uc790\u0020\u0034\u0032\u0030\u0025\u0020\uc131\uc7a5",
+    result:
+      "\ube0c\ub79c\ub4dc\u0020\uc2a4\ud1a0\ub9ac\ud154\ub9c1\uacfc\u0020\uc20f\ud3fc\u0020\uc2dc\ub9ac\uc988\ub97c\u0020\ubcd1\ud589\ud558\uc5ec\u0020\u0036\uc8fc\u0020\ub9cc\uc5d0\u0020\ucd08\uae30\u0020\uad6c\ub3c5\uc790\u0020\u0031\ub9cc\u0020\uba85\uc744\u0020\ub3cc\ud30c\ud588\uc2b5\ub2c8\ub2e4\u002e",
+  },
+  {
+    category: "\uc804\ud658\u0020\ucea0\ud398\uc778",
+    client: "\uc774\ucee4\uba38\uc2a4\u0020\u0044\u0032\u0043",
+    metric: "\u0052\u004f\u0041\u0053\u0020\u0033\u002e\u0035\ubc30\u0020\uac1c\uc120",
+    result:
+      "\uac80\uc0c9\u0020\uc758\ub3c4\uc5d0\u0020\ub9de\ub294\u0020\ucf58\ud150\uce20\uc640\u0020\ub79c\ub529\u0020\ucd5c\uc801\ud654\ub97c\u0020\ud1b5\ud574\u0020\uad11\uace0\u0020\uc758\uc874\ub3c4\ub97c\u0020\ub0ae\ucd94\uace0\u0020\uc790\uc0dd\u0020\ucc44\ub110\uc744\u0020\uad6c\ucd95\ud588\uc2b5\ub2c8\ub2e4\u002e",
+  },
+  {
+    category: "\ucf58\ud150\uce20\u0020\ub9ac\ub274\uc5bc",
+    client: "\ud504\ub85c\ub355\ud2b8\u0020\u0053\u0061\u0061\u0053",
+    metric: "\ub9ac\ub4dc\u0020\uc804\ud658\u0020\u0036\u0038\u0025\u0020\uc99d\uac00",
+    result:
+      "\ud29c\ud1a0\ub9ac\uc5bc\u0020\uae30\ubc18\u0020\uc601\uc0c1\uacfc\u0020\uc6e8\ube44\ub098\u0020\ud074\ub9bd\uc744\u0020\uc7ac\uac00\uacf5\ud558\uc5ec\u0020\uc720\uc785\u0020\ub300\ube44\u0020\ub9ac\ub4dc\u0020\ud68d\ub4dd\ub960\uc744\u0020\ud070\u0020\ud3ed\uc73c\ub85c\u0020\uac1c\uc120\ud588\uc2b5\ub2c8\ub2e4\u002e",
+  },
+];
 
-export function PortfolioSection() {
-  const capabilities = [
-    {
-      icon: Monitor,
-      title: "WordPress & Webflow 기반 반응형 사이트 구축",
-      items: [
-        "브랜드 성격에 맞는 사용자 경험 설계",
-        "관리자와 콘텐츠(CMS) 구조 자동화",
-        "모바일·태블릿 반응형 최적화",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1722596627369-a743837c7176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JkcHJlc3MlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc2MTEyMjU0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      icon: Zap,
-      title: "노코드/로코드 웹사이트 자동 생성 시스템",
-      items: [
-        "AI 프롬프트 기반 페이지 생성",
-        "서비스별 자동 레이아웃 설계 · 섹션 배치",
-        "데이터 연동, 문의 폼 시스템 통합",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxubyUyMGNvZGUlMjBhdXRvbWF0aW9ufGVufDF8fHx8MTc2MTIzNjQ2NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      icon: Sparkles,
-      title: "AI 콘텐츠·이미지 자동 생성 파이프라인",
-      items: [
-        "텍스트·배너·상품 설명 자동 생성",
-        "로고·섹션 배경·히어로 이미지 자동 생성",
-        "다국어 자동 번역 및 SEO 자동 최적화",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1721864428830-7417b93831b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGNvbnRlbnQlMjBjcmVhdGlvbnxlbnwxfHx8fDE3NjEyMzY0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      icon: ShoppingCart,
-      title: "커머스·예약·게시판 기능 통합 구축",
-      items: [
-        "WordPress WooCommerce / Shopify 연동",
-        "예약·상담·문의 시스템 도입",
-        "공공·기업용 자료 게시판 구성 가능",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwbGF0Zm9ybXxlbnwxfHx8fDE3NjEyMDM2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      icon: Settings,
-      title: "운영 자동화·유지보수 서비스",
-      items: [
-        "AI 모니터링 기반 성과 분석",
-        "문의·견적 요청 자동 분류 및 알림 발송",
-        "CMS 콘텐츠·이미지 실시간 업데이트",
-      ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwYW5hbHl0aWNzJTIwbW9uaXRvcmluZ3xlbnwxfHx8fDE3NjEyMzY0Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-  ];
-
+export const PortfolioSection = () => {
   return (
-    <section id="portfolio" className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-[#E9ECEF] rounded-full mb-4">
-            <span className="text-[#00ADB5]" style={{ fontWeight: 600 }}>포트폴리오</span>
-          </div>
-          <h2 className="text-[#14213D] mb-4" style={{ fontSize: "2.5rem", fontWeight: 700 }}>
-            AI 기반 카페·웹사이트 제작 포트폴리오
+    <section className="bg-white text-slate-900">
+      <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
+        <div className="flex flex-col gap-4 text-center">
+          <span className="text-sm font-semibold text-sky-500">
+            Portfolio Highlights
+          </span>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            {"\uc2e4\ud5d8\uc73c\ub85c\u0020\uac80\uc99d\ud55c\u0020\uc131\uc7a5\u0020\uc0ac\ub840"}
           </h2>
-          <p className="text-[#333333] max-w-3xl mx-auto" style={{ fontSize: "1.125rem", lineHeight: 1.7 }}>
-            수랩은 워드프레스, 웹플로우, AI 빌더 등 다양한 플랫폼을 활용해 기업 맞춤형 웹사이트를 제작합니다.
+          <p className="text-base text-slate-600">
+            {"\uc2e4\ud5d8\u0020\uc124\uacc4\ubd80\ud130\u0020\ud06c\ub9ac\uc5d0\uc774\ud2f0\ube0c\u0020\uc81c\uc791\u002c\u0020\uc131\uacfc\u0020\uce21\uc815\uae4c\uc9c0\u0020\ud300\uc774\u0020\uc9c1\uc811\u0020\uc2e4\ud589\ud558\uba70\u0020\ub9cc\ub4e0\u0020\uacb0\uacfc\uc785\ub2c8\ub2e4\u002e"}
           </p>
         </div>
-
-        {/* Capabilities Grid */}
-        <div className="space-y-8">
-          {capabilities.map((capability, index) => {
-            const Icon = capability.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white border-2 border-[#E9ECEF] rounded-2xl overflow-hidden hover:border-[#00ADB5] transition-all hover:shadow-xl group"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                  {/* Left - Image (2 columns) */}
-                  <div className="md:col-span-2 relative overflow-hidden">
-                    <ImageWithFallback
-                      src={capability.image}
-                      alt={capability.title}
-                      className="w-full h-full object-cover min-h-[250px] group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
-                  </div>
-
-                  {/* Right - Content (3 columns) */}
-                  <div className="md:col-span-3 p-8 flex flex-col justify-center">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-14 h-14 rounded-xl bg-[#00ADB5]/10 flex items-center justify-center group-hover:bg-[#00ADB5] transition-colors">
-                          <Icon size={28} className="text-[#00ADB5] group-hover:text-white transition-colors" />
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-[#14213D] mb-4" style={{ fontSize: "1.25rem", fontWeight: 700, lineHeight: 1.4 }}>
-                          {capability.title}
-                        </h3>
-                        <ul className="space-y-3">
-                          {capabilities[index].items.map((item, itemIndex) => (
-                            <li key={itemIndex} className="flex items-start gap-3">
-                              <Check size={18} className="text-[#00ADB5] mt-1 flex-shrink-0" />
-                              <span className="text-[#333333]" style={{ fontSize: "1rem", lineHeight: 1.6 }}>
-                                {item}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-[#14213D] text-white rounded-xl hover:bg-[#1a2a4d] transition-all hover:shadow-lg inline-flex items-center gap-2">
-            <span style={{ fontSize: "1.0625rem", fontWeight: 600 }}>제작 방식 자세히 보기</span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {CASE_STUDIES.map((study) => (
+            <article
+              key={`${study.client}-${study.metric}`}
+              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
-              <path
-                d="M7.5 15L12.5 10L7.5 5"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+              <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                {study.category}
+              </div>
+              <h3 className="mt-3 text-xl font-semibold text-slate-900">
+                {study.client}
+              </h3>
+              <p className="mt-2 text-sm font-semibold text-sky-500">
+                {study.metric}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                {study.result}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default PortfolioSection;
