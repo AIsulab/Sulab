@@ -11,6 +11,11 @@
   "codex.experimental.skipDiffApproval": true,
   "codex.diff.autoAcceptChanges": true,
   "codex.diff.confirmBeforeApply": false,
-  "codex.silentMode": true
+  "codex.silentMode": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "workbench.editor.enablePreview": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForDiffChanges": false
 }
 
