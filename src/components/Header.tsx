@@ -17,24 +17,24 @@ const scrollToSection = (sectionId: string) => {
 
 export function Header() {
   return (
-    <header className="sticky inset-x-0 top-0 z-30 bg-white/80 backdrop-blur shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-6">
+    <header className="sticky inset-x-0 top-0 z-30 bg-white/80 backdrop-blur shadow-sm dark:bg-dark/80">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-dark dark:text-slate-100 lg:px-6">
         <button
           type="button"
           aria-label="홈 섹션으로 이동"
           onClick={() => scrollToSection("hero")}
-          className="cursor-pointer text-lg font-semibold text-dark"
+          className="cursor-pointer text-lg font-semibold text-dark dark:text-white"
         >
           SULAB
         </button>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-gray md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium text-gray dark:text-slate-300 md:flex">
           {sections.map((section) => (
             <button
               key={section.id}
               type="button"
               aria-label={`${section.label} 섹션으로 이동`}
               onClick={() => scrollToSection(section.id)}
-              className="cursor-pointer transition hover:text-primary"
+              className="cursor-pointer transition hover:text-primary dark:hover:text-primary"
             >
               {section.label}
             </button>

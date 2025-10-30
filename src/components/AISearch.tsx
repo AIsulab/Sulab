@@ -1,19 +1,14 @@
 import { FormEvent, useMemo, useState } from "react";
 
-import { filterSearchResults, mockSearchResults, recommendedKeywords } from "@/utils/aiSearch";
+import { filterSearchResults, recommendedKeywords, type SearchResult } from "@/utils/aiSearch";
 
 export function AISearch() {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState(mockSearchResults.slice(0, 3));
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
-  const visibleResults = useMemo(() => {
-    if (!hasSearched) {
-      return results;
-    }
-    return results.slice(0, 3);
-  }, [results, hasSearched]);
+  const visibleResults = useMemo(() => results.slice(0, 3), [results]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -81,6 +76,11 @@ export function AISearch() {
                 <span className="h-10 w-10 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
                 <p className="mt-4 text-sm font-medium md:text-base">AI가 최적의 조합을 계산하고 있습니다...</p>
               </div>
+            ) : !hasSearched ? (
+              <div className="col-span-3 rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-10 text-center">
+                <p className="text-base font-medium text-dark">원하시는 목표나 서비스를 입력해 주세요.</p>
+                <p className="mt-2 text-sm text-gray">예: 온라인 쇼핑몰 매출을 2배로 늘리고 싶어요</p>
+              </div>
             ) : visibleResults.length > 0 ? (
               visibleResults.map((result) => (
                 <article
@@ -95,10 +95,7 @@ export function AISearch() {
                   <p className="mt-2 text-sm text-gray md:text-base">{result.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {result.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                      >
+                      <span key={tag} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                         {tag}
                       </span>
                     ))}
@@ -119,7 +116,11 @@ export function AISearch() {
                       onClick={() => {
                         setQuery(keyword);
                         setHasSearched(true);
-                        setResults(filterSearchResults(keyword));
+                        setLoading(true);
+                        window.setTimeout(() => {
+                          setResults(filterSearchResults(keyword));
+                          setLoading(false);
+                        }, 400);
                       }}
                     >
                       #{keyword}

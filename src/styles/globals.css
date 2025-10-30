@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply bg-white text-dark font-pretendard antialiased;
+  @apply bg-white text-dark font-pretendard antialiased dark:bg-dark dark:text-slate-100;
 }
 
 .section-heading {
