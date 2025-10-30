@@ -1,3 +1,15 @@
+import CTASection from "./components/CTASection";
+import CategorySection from "./components/CategorySection";
+import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import MatchingPreviewSection from "./components/MatchingPreviewSection";
+import MetricsSection from "./components/MetricsSection";
+import NavigationBar from "./components/NavigationBar";
+import PartnersSection from "./components/PartnersSection";
+import ProjectShowcaseSection from "./components/ProjectShowcaseSection";
+import SolutionSection from "./components/SolutionSection";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -8,14 +20,19 @@ export default function App() {
           font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
       `}</style>
-      <main className="mx-auto flex max-w-4xl flex-col items-center px-6 py-32 text-center text-slate-900">
-        <h1 className="text-3xl font-bold sm:text-4xl">새로운 홈페이지를 준비 중입니다</h1>
-        <p className="mt-4 text-sm text-slate-600 sm:text-base">
-          기존 컴포넌트를 정리하고 신규 디자인을 구축할 예정입니다.
-          <br />
-          완성된 화면은 곧 공식 빌드에 반영될 예정입니다.
-        </p>
+      <NavigationBar />
+      <main>
+        <HeroSection />
+        <MetricsSection />
+        <CategorySection />
+        <MatchingPreviewSection />
+        <ProjectShowcaseSection />
+        <SolutionSection />
+        <CTASection />
+        <PartnersSection />
+        <FAQSection />
       </main>
+      <Footer />
     </div>
   );
 }
