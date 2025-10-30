@@ -1,17 +1,17 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const sections = [
 
-  { id: "services", label: "서비스" },
+  { id: "services", label: "?쒕퉬?? },
 
-  { id: "ai-search", label: "AI 검색" },
+  { id: "ai-search", label: "AI 寃?? },
 
-  { id: "portfolio", label: "포트폴리오" },
+  { id: "portfolio", label: "?ы듃?대━?? },
 
-  { id: "process", label: "프로세스" },
+  { id: "process", label: "?꾨줈?몄뒪" },
 
-  { id: "contact", label: "문의" }
+  { id: "contact", label: "臾몄쓽" }
 
 ];
 
@@ -40,20 +40,35 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-dark dark:text-slate-100 lg:px-6">
 
         <button
+
           type="button"
-          aria-label="Ȩ �������� �̵�"
+
+          aria-label="홈 占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙"
+
           onClick={() => scrollToSection("hero")}
+
           className="flex cursor-pointer items-center gap-2 text-lg font-semibold text-dark dark:text-white"
+
         >
+
           <Image
+
             src="/logo.svg"
-            alt="SULAB 로고"
+
+            alt="SULAB 濡쒓퀬"
+
             width={32}
+
             height={32}
+
             priority
+
           />
+
           <span>SULAB</span>
+
         </button>
+
         <nav className="hidden items-center gap-6 text-sm font-medium text-gray dark:text-slate-300 md:flex">
 
           {sections.map((section) => (
@@ -64,7 +79,7 @@ export function Header() {
 
               type="button"
 
-              aria-label={`${section.label} 섹션으로 이동`}
+              aria-label={`${section.label} ?뱀뀡?쇰줈 ?대룞`}
 
               onClick={() => scrollToSection(section.id)}
 
