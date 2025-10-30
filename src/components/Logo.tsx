@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 
 type LogoProps = {
   className?: string;
@@ -13,8 +13,9 @@ export function Logo({ className, priority = false, size = 36 }: LogoProps) {
       alt="SULAB 로고"
       width={size}
       height={size}
+      sizes="(max-width: 768px) 32px, 40px"
       priority={priority}
-      className={["h-auto w-auto", className].filter(Boolean).join(" ")}
+      className={className ?? "h-auto w-auto"}
     />
   );
 }
