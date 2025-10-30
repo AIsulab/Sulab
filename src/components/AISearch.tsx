@@ -118,7 +118,7 @@ export function AISearch() {
                       className="cursor-pointer rounded-full border border-primary/40 px-4 py-2 text-sm text-primary transition hover:bg-primary/10"
                       onClick={() => {
                         setQuery(keyword);
-                        setHasSearched(false);
+                        setHasSearched(true);
                         setResults(filterSearchResults(keyword));
                       }}
                     >

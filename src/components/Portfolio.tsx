@@ -28,7 +28,7 @@ export function Portfolio() {
               type="button"
               aria-label={`${item.title} 상세 보기`}
               onClick={() => setSelectedId(item.id)}
-              className="group relative h-72 overflow-hidden rounded-3xl shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl"
+              className="group relative h-72 cursor-pointer overflow-hidden rounded-3xl shadow-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl"
             >
               <Image
                 src={item.image}

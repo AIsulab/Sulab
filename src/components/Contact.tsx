@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { SiKakaotalk } from "react-icons/si";
 import toast from "react-hot-toast";
@@ -19,7 +19,8 @@ export function Contact() {
   const [formValues, setFormValues] = useState<FormState>(initialState);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (key: keyof FormState) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange =
+    (key: keyof FormState) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormValues((prev) => ({
       ...prev,
       [key]: event.target.value
