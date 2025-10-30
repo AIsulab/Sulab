@@ -46,8 +46,8 @@ export function Header() {
           className="flex cursor-pointer items-center gap-2 text-lg font-semibold text-dark dark:text-white"
         >
           <Image
-            src="/logo.svg"
-            alt="SULAB 로고"
+            src="/favicon.png"
+            alt="SULAB 아이콘"
             width={32}
             height={32}
             priority
