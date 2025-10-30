@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const sections = [
@@ -45,12 +45,12 @@ export function Header() {
           onClick={() => scrollToSection("hero")}
           className="flex cursor-pointer items-center gap-2 text-lg font-semibold text-dark dark:text-white"
         >
-          <Image
+          <img
             src="/favicon.png"
             alt="SULAB 아이콘"
-            width={32}
-            height={32}
-            priority
+            width="32"
+            height="32"
+            className="h-8 w-8"
           />
           <span>SULAB</span>
         </button>
