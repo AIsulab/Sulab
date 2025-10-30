@@ -1,8 +1,10 @@
+'use client';
+
 const categories = [
-  { label: "웹 · 앱 개발", description: "서비스 개발, 유지보수, 리뉴얼" },
-  { label: "퍼블리싱 · 웹디자인", description: "UI/UX 개선, 반응형 웹 구축" },
-  { label: "커머스 · 플랫폼", description: "마켓플레이스, 예약 시스템 구축" },
-  { label: "브랜딩 · 마케팅", description: "콘텐츠 제작, 퍼포먼스 마케팅" },
+  { label: '웹 · 앱 개발', description: '서비스 개발, 유지 보수, 리뉴얼 프로젝트를 빠르게 진행하세요.' },
+  { label: '퍼블리싱 · 디자인', description: 'UI/UX 개선과 반응형 웹 구축까지 원스톱으로 지원합니다.' },
+  { label: '커머스 · 플랫폼', description: '마켓플레이스, 예약 시스템 등 비즈니스 플랫폼을 구축합니다.' },
+  { label: '브랜딩 · 마케팅', description: '콘텐츠 제작, 퍼포먼스 마케팅 등 성장 전략을 함께 설계합니다.' },
 ];
 
 const CategorySection = () => {

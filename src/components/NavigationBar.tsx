@@ -1,14 +1,16 @@
+'use client';
+
 const NAV_ITEMS = [
-  { label: "서비스 소개", href: "#services" },
-  { label: "프로젝트 의뢰", href: "#matching" },
-  { label: "프로젝트 사례", href: "#cases" },
-  { label: "파트너 소개", href: "#experts" },
-  { label: "고객센터", href: "#support" },
+  { label: '서비스 소개', href: '#services' },
+  { label: '프로젝트 의뢰', href: '#matching' },
+  { label: '프로젝트 사례', href: '#cases' },
+  { label: '파트너 소개', href: '#experts' },
+  { label: '고객센터', href: '#support' },
 ];
 
 const NavigationBar = () => {
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur">
       <div className="border-b border-sky-100 bg-sky-50/80">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2 text-xs text-slate-600">
           <span>IT 프로젝트, SULAB과 함께 시작하세요.</span>

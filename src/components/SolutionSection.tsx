@@ -1,15 +1,17 @@
+'use client';
+
 const serviceHighlights = [
   {
-    title: "ì „ë‹´ ë§¤ë‹ˆì € ë°°ì •",
-    description: "í”„ë¡œì íŠ¸ ê¸°íšë¶€í„° ê³„ì•½, ì¼ì • ê´€ë¦¬ê¹Œì§€ ì „ë‹´ ë§¤ë‹ˆì €ê°€ í•¨ê»˜í•©ë‹ˆë‹¤.",
+    title: 'Àü´ã ¸Å´ÏÀú ¹èÁ¤',
+    description: 'ÇÁ·ÎÁ§Æ® ±âÈ¹ºÎÅÍ °è¾à, ÀÏÁ¤ °ü¸®±îÁö Àü´ã ¸Å´ÏÀú°¡ ÇÔ²²ÇÕ´Ï´Ù.',
   },
   {
-    title: "ê²€ì¦ëœ ì „ë¬¸ê°€ ì¶”ì²œ",
-    description: "í‰ê°€ ì§€í‘œì™€ ë¦¬ë·° ê¸°ë°˜ìœ¼ë¡œ í”„ë¡œì íŠ¸ì— ê¼­ ë§žëŠ” ì „ë¬¸ê°€ë¥¼ ì„ ë³„í•©ë‹ˆë‹¤.",
+    title: '°ËÁõµÈ Àü¹®°¡ ÃßÃµ',
+    description: 'Æò°¡ ÁöÇ¥¿Í ¸®ºä ±â¹ÝÀ¸·Î ÇÁ·ÎÁ§Æ®¿¡ ²À ¸Â´Â Àü¹®°¡¸¦ ¼±º°ÇÕ´Ï´Ù.',
   },
   {
-    title: "ì•ˆì „ ê²°ì œ ì‹œìŠ¤í…œ",
-    description: "ë‹¨ê³„ë³„ ëŒ€ê¸ˆ ë³´í˜¸ í”„ë¡œì„¸ìŠ¤ë¡œ ì•ˆì •ì ì¸ í˜‘ì—…ì„ ì§€ì›í•©ë‹ˆë‹¤.",
+    title: '¾ÈÀü °áÁ¦ ½Ã½ºÅÛ',
+    description: '´Ü°èº° ´ë±Ý º¸È£ ÇÁ·Î¼¼½º·Î ¾ÈÁ¤ÀûÀÎ Çù¾÷À» Á¦°øÇÕ´Ï´Ù.',
   },
 ];
 
@@ -18,19 +20,14 @@ const SolutionSection = () => {
     <section className="bg-sky-50 py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-slate-900">
-            ìœ„ì‹œì¼“ì´ ì œê³µí•˜ëŠ” í”„ë¡œì íŠ¸ ë§¤ì¹­ ì„œë¹„ìŠ¤
-          </h2>
+          <h2 className="text-3xl font-bold text-slate-900">SULABÀÌ Á¦°øÇÏ´Â ÇÁ·ÎÁ§Æ® ¸ÅÄª ¼­ºñ½º</h2>
           <p className="mt-3 text-sm text-slate-600">
-            í”„ë¡œì íŠ¸ ì„±ê³µ í™•ë¥ ì„ ë†’ì´ëŠ” ì²´ê³„ì ì¸ ë§¤ì¹­ê³¼ ê´€ë¦¬ ì‹œìŠ¤í…œì„ ê²½í—˜í•´ ë³´ì„¸ìš”.
+            ÇÁ·ÎÁ§Æ® ¼º°ø È®·üÀ» ³ôÀÌ´Â Ã¼°èÀûÀÎ ¸ÅÄª°ú °ü¸® ½Ã½ºÅÛÀ» °æÇèÇØ º¸¼¼¿ä.
           </p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {serviceHighlights.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-sky-100 bg-white p-6 text-left shadow-sm"
-            >
+            <div key={item.title} className="rounded-3xl border border-sky-100 bg-white p-6 text-left shadow-sm">
               <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
               <p className="mt-3 text-sm text-slate-600">{item.description}</p>
             </div>

@@ -1,7 +1,9 @@
+'use client';
+
 const heroStats = [
-  { label: "누적 의뢰", value: "124,131건" },
-  { label: "전문가 풀", value: "20,062명" },
-  { label: "파트너 만족도", value: "97%" },
+  { label: '누적 의뢰', value: '124,131건' },
+  { label: '전문가 풀', value: '20,062명' },
+  { label: '파트너 만족도', value: '97%' },
 ];
 
 const HeroSection = () => {
@@ -10,8 +12,8 @@ const HeroSection = () => {
       id="top"
       className="relative overflow-hidden bg-gradient-to-br from-sky-100 via-white to-blue-50"
     >
-      <div className="absolute -left-10 top-10 h-64 w-64 rounded-full bg-sky-200/60 blur-3xl" />
-      <div className="absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-blue-200/60 blur-3xl" />
+      <div className="pointer-events-none absolute -left-10 top-10 h-64 w-64 rounded-full bg-sky-200/60 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-blue-200/60 blur-3xl" />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-6">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold text-sky-600 shadow-sm">
@@ -63,16 +65,16 @@ const HeroSection = () => {
             <div className="space-y-4">
               {[
                 {
-                  role: "풀스택 개발자",
-                  details: "최근 5개 앱 서비스 출시 · 리뷰 4.9/5.0",
+                  role: '풀스택 개발자',
+                  details: '최근 5개 앱 서비스 출시 · 리뷰 4.9/5.0',
                 },
                 {
-                  role: "UX/UI 디자이너",
-                  details: "프로토타이핑 · 반응형 웹 전문 · 기업 채널 경험",
+                  role: 'UX/UI 디자이너',
+                  details: '프로토타이핑 · 반응형 웹 전문 · 기업 채널 경험',
                 },
                 {
-                  role: "PM / 기획자",
-                  details: "핀테크 · 커머스 분야 10년 경력 · 고객 인터뷰 전문",
+                  role: 'PM / 기획자',
+                  details: '핀테크 · 커머스 분야 10년 경력 · 고객 인터뷰 전문',
                 },
               ].map((profile) => (
                 <div

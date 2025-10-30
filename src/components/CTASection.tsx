@@ -1,3 +1,5 @@
+'use client';
+
 const CTASection = () => {
   return (
     <section id="start" className="bg-sky-900 text-white">
@@ -5,7 +7,7 @@ const CTASection = () => {
         <div className="space-y-4">
           <h2 className="text-3xl font-bold">지금 바로 프로젝트 상담을 시작해 보세요</h2>
           <p className="text-sm text-slate-200">
-            프로젝트 등록부터 매칭, 계약, 결제 관리까지 위시켓 매니저가 함께합니다.
+            프로젝트 등록부터 매칭, 계약, 결제 관리까지 SULAB 매니저가 함께합니다.
           </p>
         </div>
         <div className="rounded-3xl bg-white/10 px-6 py-6 shadow-lg shadow-sky-900/30 backdrop-blur">

@@ -1,12 +1,14 @@
+'use client';
+
 const partners = [
-  "NAVER",
-  "KAKAO",
-  "CJ",
-  "LOTTE",
-  "HYBE",
-  "LINE",
-  "BAEMIN",
-  "YANOLJA",
+  'NAVER',
+  'KAKAO',
+  'CJ',
+  'LOTTE',
+  'HYBE',
+  'LINE',
+  'BAEMIN',
+  'YANOLJA',
 ];
 
 const PartnersSection = () => {
@@ -17,7 +19,7 @@ const PartnersSection = () => {
           Partners
         </span>
         <h2 className="mt-2 text-3xl font-bold text-slate-900">
-          위시켓과 함께 성장하는 고객사
+          SULAB과 함께 성장하는 고객사
         </h2>
         <div className="mt-8 grid grid-cols-2 gap-4 text-slate-500 sm:grid-cols-4">
           {partners.map((partner) => (

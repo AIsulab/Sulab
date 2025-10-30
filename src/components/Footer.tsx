@@ -1,12 +1,14 @@
-export function Footer() {
+'use client';
+
+const Footer = () => {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 px-6 py-8 text-center text-xs text-slate-500">
-        <p>SULAB Â© {new Date().getFullYear()}</p>
-        <p>ìƒˆë¡œìš´ í™ˆíŽ˜ì´ì§€ê°€ ì˜¤í”ˆë˜ë©´ ë” ë§Žì€ ì†Œì‹ì„ ì „í•´ë“œë¦´ê²Œìš”.</p>
+    <footer className="border-t border-slate-200 bg-slate-900 text-slate-200">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-6 py-10 text-center text-xs text-slate-300">
+        <p>SULAB ¨Ï {new Date().getFullYear()}</p>
+        <p>»õ·Î¿î È¨ÆäÀÌÁö°¡ ¿ÀÇÂµÇ¸é ´õ ¸¹Àº ¼Ò½ÄÀ» ÀüÇØ µå¸±°Ô¿ä.</p>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

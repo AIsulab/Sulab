@@ -1,7 +1,9 @@
+'use client';
+
 const metrics = [
-  { title: "10ë…„ ì´ìƒ ì¶•ì ëœ ë°ì´í„°", description: "ëˆ„ì  ì˜ë¢° 124,131ê±´ Â· ë§¤ì›” 2,000ê±´ ì´ìƒ" },
-  { title: "ì „ë¬¸ê°€ ë„¤íŠ¸ì›Œí¬ 20,062ëª…", description: "ê²€ì¦ëœ ê°œë°œìž Â· ë””ìžì´ë„ˆ Â· ê¸°íšìž Â· QA" },
-  { title: "í”„ë¡œì íŠ¸ ë§Œì¡±ë„ 97%", description: "í”„ë¡œì„¸ìŠ¤ì™€ í’ˆì§ˆ í‰ê°€ ê¸°ë°˜ ë§¤ì¹­ ì‹œìŠ¤í…œ" },
+  { title: '10³â ÀÌ»ó ÃàÀûµÈ µ¥ÀÌÅÍ', description: '´©Àû ÀÇ·Ú 124,131°Ç ¡¤ ¸Å¿ù 2,000°Ç ÀÌ»ó' },
+  { title: 'Àü¹®°¡ ³×Æ®¿öÅ© 20,062¸í', description: '°ËÁõµÈ °³¹ßÀÚ ¡¤ µðÀÚÀÌ³Ê ¡¤ ±âÈ¹ÀÚ ¡¤ QA' },
+  { title: 'ÆÄÆ®³Ê ¸¸Á·µµ 97%', description: 'ÇÁ·Î¼¼½º¿Í Ç°Áú Æò°¡ ±â¹Ý ¸ÅÄª ½Ã½ºÅÛ' },
 ];
 
 const MetricsSection = () => {
@@ -9,7 +11,7 @@ const MetricsSection = () => {
     <section className="bg-sky-50 py-12">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
-          ì™œ ìˆ˜ë§Žì€ ê¸°ì—…ì´ ìœ„ì‹œì¼“ì„ ì„ íƒí• ê¹Œìš”?
+          ¿Ö SULABÀ» ¼±ÅÃÇØ¾ß ÇÒ±î¿ä?
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           {metrics.map((metric) => (
