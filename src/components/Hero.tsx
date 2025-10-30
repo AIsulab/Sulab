@@ -21,17 +21,17 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100"
+      className="section-padding relative isolate overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col-reverse gap-12 px-4 pb-20 pt-24 md:flex-row md:items-center md:pt-28 lg:px-6">
+      <div className="section-container flex w-full flex-col-reverse gap-12 md:flex-row md:items-center">
         <div className="w-full md:w-2/3">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
             SULAB PERFORMANCE AGENCY
           </span>
-          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-dark md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-dark sm:text-4xl lg:text-5xl">
             홈페이지 제작 · 웹디자인 · 광고마케팅, SULAB이 성과로 증명합니다.
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-gray md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray md:text-lg">
             데이터를 기반으로 한 전략 설계부터 디자인, 개발, 마케팅까지. 브랜드의 디지털 여정을
             풀파이프라인으로 지원합니다.
           </p>
@@ -53,7 +53,7 @@ export function Hero() {
               포트폴리오 보기
             </button>
           </div>
-          <dl className="mt-12 grid grid-cols-2 gap-8 text-left sm:grid-cols-4">
+          <dl className="mt-12 grid grid-cols-2 gap-6 text-left sm:grid-cols-4">
             {stats.map((item) => (
               <div key={item.label} className="rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm">
                 <dt className="text-sm font-medium text-gray">{item.label}</dt>

@@ -1,15 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
+import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const sections = [
 
-  { id: "services", label: "서비스" },
+  { id: "services", label: "?�비?? },
 
-  { id: "ai-search", label: "AI 검색" },
+  { id: "ai-search", label: "AI 검?? },
 
-  { id: "portfolio", label: "포트폴리오" },
+  { id: "portfolio", label: "?�트?�리?? },
 
-  { id: "process", label: "프로세스" },
+  { id: "process", label: "?�로?�스" },
 
   { id: "contact", label: "문의" }
 
@@ -37,24 +37,19 @@ export function Header() {
 
     <header className="sticky inset-x-0 top-0 z-30 bg-white/80 backdrop-blur shadow-sm dark:bg-dark/80">
 
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-dark dark:text-slate-100 lg:px-6">
+      <div className="section-container flex items-center justify-between py-4 text-dark dark:text-slate-100 lg:py-5">
 
         <button
           type="button"
           aria-label="Ȩ �������� �̵�"
           onClick={() => scrollToSection("hero")}
-          className="flex cursor-pointer items-center gap-2 text-lg font-semibold text-dark dark:text-white"
+          className="flex items-center gap-3 text-lg font-semibold text-dark transition hover:opacity-90 dark:text-white"
         >
-          <img
-            src="/favicon.png"
-            alt="SULAB 아이콘"
-            width="32"
-            height="32"
-            className="h-8 w-8"
-          />
-          <span>SULAB</span>
+          <Logo size={40} className="h-9 w-auto" priority />
+          <span className="text-xl font-semibold tracking-tight">SULAB</span>
         </button>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-gray dark:text-slate-300 md:flex">
+
+        <nav className="hidden items-center gap-8 text-sm font-medium text-gray dark:text-slate-300 md:flex">
 
           {sections.map((section) => (
 
@@ -64,7 +59,7 @@ export function Header() {
 
               type="button"
 
-              aria-label={`${section.label} 섹션으로 이동`}
+              aria-label={`${section.label} ?�션?�로 ?�동`}
 
               onClick={() => scrollToSection(section.id)}
 

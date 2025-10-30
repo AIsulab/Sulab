@@ -13,11 +13,11 @@ export function Services() {
   const handleClick = useCallback(scrollToContact, []);
 
   return (
-    <section id="services" className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+    <section id="services" className="section-padding bg-white">
+      <div className="section-container">
         <div className="md:text-center">
           <h2 className="section-heading">비즈니스 성장을 이끄는 핵심 서비스</h2>
-          <p className="section-subtitle md:mx-auto md:max-w-3xl">
+          <p className="section-subtitle section-copy">
             전략 기획부터 실행과 고도화까지, SULAB이 가장 자신 있는 서비스를 선별해 제안합니다.
           </p>
         </div>
@@ -32,7 +32,7 @@ export function Services() {
             >
               <span className="text-sm font-semibold uppercase tracking-tight text-primary">SULAB SERVICE</span>
               <h3 className="mt-4 text-2xl font-semibold text-dark">{service.title}</h3>
-              <p className="mt-3 text-sm text-gray md:text-base">{service.description}</p>
+              <p className="mt-3 text-sm leading-relaxed text-gray md:text-base">{service.description}</p>
               <ul className="mt-6 space-y-2 text-sm text-gray">
                 {service.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-2 text-sm">

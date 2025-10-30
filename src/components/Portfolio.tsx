@@ -12,11 +12,11 @@ export function Portfolio() {
   );
 
   return (
-    <section id="portfolio" className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+    <section id="portfolio" className="section-padding bg-white">
+      <div className="section-container">
         <div className="md:text-center">
           <h2 className="section-heading">성과로 입증된 SULAB의 대표 프로젝트</h2>
-          <p className="section-subtitle md:mx-auto md:max-w-3xl">
+          <p className="section-subtitle section-copy">
             프로젝트마다 다른 산업과 목표를 성공으로 이끈 경험이 있습니다. 클릭해 상세 이야기를 확인하세요.
           </p>
         </div>
@@ -69,7 +69,7 @@ export function Portfolio() {
 
             <span className="text-sm font-semibold uppercase tracking-wide text-primary">{selectedProject.category}</span>
             <h3 className="mt-2 text-2xl font-semibold text-dark">{selectedProject.title}</h3>
-            <p className="mt-4 text-base text-gray">{selectedProject.description}</p>
+            <p className="mt-4 text-base leading-relaxed text-gray">{selectedProject.description}</p>
 
             <ul className="mt-6 space-y-2">
               {selectedProject.metrics.map((metric) => (

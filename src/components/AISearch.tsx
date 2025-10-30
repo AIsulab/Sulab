@@ -23,13 +23,13 @@ export function AISearch() {
   };
 
   return (
-    <section id="ai-search" className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+    <section id="ai-search" className="section-padding bg-slate-50">
+      <div className="section-container">
         <div className="rounded-3xl border border-primary/30 bg-white p-12 shadow-lg">
-          <div className="md:flex md:items-center md:justify-between">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="section-heading">AI 검색으로 맞춤 솔루션을 찾아보세요</h2>
-              <p className="section-subtitle md:max-w-2xl">
+              <p className="section-subtitle md:max-w-2xl md:leading-relaxed">
                 비즈니스 목표를 입력하면 SULAB의 데이터베이스를 기반으로 가장 적합한 솔루션 조합을
                 즉시 추천합니다.
               </p>
@@ -91,7 +91,7 @@ export function AISearch() {
                   <span className="text-xs font-semibold uppercase tracking-wide text-primary">
                     #{result.keyword}
                   </span>
-                  <h3 className="mt-3 text-xl font-semibold text-dark">{result.title}</h3>
+                  <h3 className="mt-3 text-2xl font-semibold text-dark">{result.title}</h3>
                   <p className="mt-2 text-sm text-gray md:text-base">{result.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {result.tags.map((tag) => (
