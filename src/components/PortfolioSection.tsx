@@ -1,59 +1,61 @@
-const CASE_STUDIES = [
+const CASES = [
   {
-    category: "프랜차이즈 런칭",
-    client: "브랜드 A",
-    metric: "구독자 420% 성장",
-    result:
-      "브랜드 스토리텔링과 숏폼 시리즈를 병행하여 6주 만에 초기 구독자 1만 명을 돌파했습니다.",
+    client: "글로벌 커피 프랜차이즈",
+    metric: "검색 유입 215% 증가",
+    summary:
+      "매장 확장 시점에 맞춰 검색 키워드와 영상 콘텐츠를 설계해 가맹 문의와 방문 전환율을 동시에 끌어올렸습니다.",
   },
   {
-    category: "전환 캠페인",
-    client: "이커머스 D2C",
-    metric: "ROAS 3.5배 개선",
-    result:
-      "검색 의도에 맞는 콘텐츠와 랜딩 최적화를 통해 광고 의존도를 낮추고 자생 채널을 구축했습니다.",
+    client: "B2B SaaS 협업툴",
+    metric: "리드 전환율 72% 향상",
+    summary:
+      "튜토리얼 시리즈와 숏폼 콘텐츠, 리타게팅 여정을 결합해 고의향 고객만 세일즈 팀에 전달되도록 자동화했습니다.",
   },
   {
-    category: "콘텐츠 리뉴얼",
-    client: "프로덕트 SaaS",
-    metric: "리드 전환 68% 증가",
-    result:
-      "튜토리얼 기반 영상과 웨비나 클립을 재가공하여 유입 대비 리드 획득률을 큰 폭으로 개선했습니다.",
+    client: "D2C 뷰티 브랜드",
+    metric: "CAC 38% 절감",
+    summary:
+      "리뷰 콘텐츠를 다국어·멀티 포맷으로 재가공하고 인플루언서 협업을 병행하여 재구매율을 크게 높였습니다.",
+  },
+  {
+    client: "온라인 교육 플랫폼",
+    metric: "구독자 1.8배 성장",
+    summary:
+      "학부모와 수험생을 세분화한 이야기 구조를 적용해 시청 유지율과 구독자 증가 추세를 안정적으로 만들었습니다.",
   },
 ];
 
 export const PortfolioSection = () => {
   return (
-    <section className="bg-white text-slate-900">
-      <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
-        <div className="flex flex-col gap-4 text-center">
-          <span className="text-sm font-semibold text-sky-500">
-            Portfolio Highlights
+    <section id="portfolio" className="border-t border-slate-100 bg-slate-50">
+      <div className="mx-auto flex max-w-6xl flex-col gap-9 px-6 py-16">
+        <div className="text-center">
+          <span className="text-sm font-semibold uppercase tracking-widest text-sky-600">
+            Success Stories
           </span>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            실험으로 검증한 성장 사례
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            실제 도입 기업의 성장 레퍼런스
           </h2>
-          <p className="text-base text-slate-600">
-            실험 설계부터 크리에이티브 제작, 성과 측정까지 팀이 직접 실행하며 만든 결과입니다.
+          <p className="mt-4 text-sm text-slate-600 sm:text-base">
+            빠른 실험과 학습 사이클을 만들고 싶은 팀이 코파일럿을 선택했습니다. 데이터로 검증된 사례를 확인해 보세요.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {CASE_STUDIES.map((study) => (
+        <div className="grid gap-6 md:grid-cols-2">
+          {CASES.map((item) => (
             <article
-              key={`${study.client}-${study.metric}`}
-              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:shadow-md"
+              key={item.client}
+              className="flex h-full flex-col gap-3 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                {study.category}
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {item.client}
+                </h3>
+                <span className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+                  {item.metric}
+                </span>
               </div>
-              <h3 className="mt-3 text-xl font-semibold text-slate-900">
-                {study.client}
-              </h3>
-              <p className="mt-2 text-sm font-semibold text-sky-500">
-                {study.metric}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                {study.result}
+              <p className="text-sm leading-relaxed text-slate-600">
+                {item.summary}
               </p>
             </article>
           ))}

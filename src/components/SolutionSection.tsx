@@ -1,52 +1,63 @@
 const SOLUTIONS = [
   {
-    tag: "Insight",
-    title: "AI 인사이트 엔진",
+    title: "AI Keyword Web Build",
     description:
-      "실시간 시장 데이터와 유튜브 트렌드를 분석해 최적의 콘텐츠 타이밍과 포맷을 제안합니다.",
+      "Transform search intent into landing pages that convert. We design architecture, write copy, and wire flows with SEO baked in.",
+    badge: "3x search-to-lead lift",
   },
   {
-    tag: "Automation",
-    title: "크리에이티브 오토메이션",
+    title: "AI Marketing Automation",
     description:
-      "브랜드 맞춤 스크립트, 썸네일 키워드, 숏폼 기획안을 자동 생성하여 제작 리소스를 줄입니다.",
+      "Connect customer data with messaging engines. Automate nurture sequences, A/B tests, and reporting without added headcount.",
+    badge: "42% media efficiency",
   },
   {
-    tag: "Growth",
-    title: "성과 기반 성장 관리",
+    title: "AI Content Production",
     description:
-      "캠페인 리포트와 대시보드로 구독자, 조회수, 참여율 변화를 추적하며 성장 전략을 고도화합니다.",
+      "Generate scripts, Shorts, thumbnails, and variations in weeks not months. Our creative pipeline blends AI with human editing.",
+    badge: "60% faster delivery",
+  },
+  {
+    title: "Performance Analytics",
+    description:
+      "Always-on dashboards track awareness, engagement, and conversion metrics. Align stakeholders with weekly growth rituals.",
+    badge: "Realtime visibility",
   },
 ];
 
 export const SolutionSection = () => {
   return (
-    <section
-      id="solutions"
-      className="bg-slate-950/60 text-white border-t border-white/5"
-    >
-      <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            SULAB 솔루션으로 빠르게 검증하세요
+    <section id="solutions" className="bg-white">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-sm font-semibold uppercase tracking-widest text-sky-600">
+            Services
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            AI marketing solutions designed for speed
           </h2>
-          <p className="mt-4 text-slate-300">
-            마케팅 퍼널의 탐색부터 실행까지, 전문가 팀과 AI 기술이 함께 움직입니다. 유저 반응을 토대로 빠르게 가설을 검증하고 다음 액션을 제시합니다.
+          <p className="mt-4 text-sm text-slate-600 sm:text-base">
+            From data discovery to creative automation and performance measurement, each service is built to shorten
+            feedback loops while keeping teams aligned.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {SOLUTIONS.map((solution) => (
             <article
               key={solution.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-sky-500/60 hover:bg-sky-500/10 hover:shadow-lg"
+              className="group flex flex-col gap-4 rounded-3xl border border-slate-100 bg-slate-50/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:shadow-lg"
             >
-              <span className="inline-flex items-center rounded-full border border-sky-400/50 bg-sky-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-200">
-                {solution.tag}
+              <span className="inline-flex w-max items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-sky-600">
+                {solution.badge}
               </span>
-              <h3 className="mt-4 text-xl font-semibold">{solution.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                {solution.description}
-              </p>
+              <h3 className="text-xl font-semibold text-slate-900">{solution.title}</h3>
+              <p className="text-sm leading-relaxed text-slate-600">{solution.description}</p>
+              <a
+                href="#consult"
+                className="text-sm font-semibold text-sky-600 transition hover:text-sky-700"
+              >
+                Learn more →
+              </a>
             </article>
           ))}
         </div>

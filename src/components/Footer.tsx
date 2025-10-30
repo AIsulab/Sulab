@@ -1,29 +1,59 @@
+const FOOTER_LINKS = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#solutions" },
+  { label: "Case studies", href: "#portfolio" },
+  { label: "Consultation", href: "#contact" },
+];
+
 export const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-200">
-      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-3">
-          <h3 className="text-2xl font-semibold text-white">SULAB</h3>
-          <p className="text-sm text-slate-400">
-            AI 마케팅 전략 연구소. 데이터와 크리에이티브로 브랜드의 지속 가능한 성장을 설계합니다.
+    <footer className="border-t border-slate-100 bg-slate-900 text-slate-200">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-4">
+          <a href="#overview" className="flex items-center gap-3 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-500 text-lg font-bold text-white">
+              S
+            </span>
+            <span className="text-lg font-semibold">SULAB Copilot</span>
+          </a>
+          <p className="text-sm text-slate-300">
+            SULAB builds AI-powered marketing systems that connect analytics, creative, and automation.
+            We help teams capture search demand and scale growth responsibly.
           </p>
-          <div className="text-xs text-slate-500">
-            {"\u00a9"} {new Date().getFullYear()} SULAB. All rights reserved.
-          </div>
         </div>
-        <div className="flex flex-wrap gap-4 text-sm">
-          <a
-            href="/search"
-            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl px-5 py-2 transition"
-          >
-            유튜브 인사이트 검색
-          </a>
-          <a
-            href="mailto:hello@sulab.ai"
-            className="rounded-xl border border-sky-400/40 px-5 py-2 font-semibold text-sky-200 hover:border-sky-400 hover:text-white transition"
-          >
-            프로젝트 문의
-          </a>
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-widest text-sky-200">Navigate</h4>
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
+            {FOOTER_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="transition hover:text-white">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-widest text-sky-200">Contact</h4>
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
+            <li>Email: hello@sulab.ai</li>
+            <li>Phone: +82 2-123-4567</li>
+            <li>Address: 125 Wangsimni-ro, Seongdong-gu, Seoul</li>
+            <li>Office hours: Mon–Fri, 10:00–18:00 KST</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-slate-800 py-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} SULAB. All rights reserved.</p>
+          <div className="flex gap-4">
+            <a href="#contact" className="transition hover:text-slate-300">
+              Privacy Policy
+            </a>
+            <a href="#contact" className="transition hover:text-slate-300">
+              Terms of Service
+            </a>
+          </div>
         </div>
       </div>
     </footer>

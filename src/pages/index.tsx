@@ -1,29 +1,46 @@
 import Head from "next/head";
+import ConsultationSection from "../components/ConsultationSection";
+import FAQSection from "../components/FAQSection";
+import FeatureOverviewSection from "../components/FeatureOverviewSection";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
-import PortfolioSection from "../components/PortfolioSection";
-import SolutionSection from "../components/SolutionSection";
+import NavigationBar from "../components/NavigationBar";
+import PricingSection from "../components/PricingSection";
+import ResourcesSection from "../components/ResourcesSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import VideoShowcaseSection from "../components/VideoShowcaseSection";
+import WorkflowSection from "../components/WorkflowSection";
 
 const HomePage = () => {
   return (
     <>
       <Head>
-        <title>SULAB | AI 마케팅 연구소</title>
+        <title>SULAB Copilot | AI Growth Marketing Lab</title>
         <meta
           name="description"
-          content="SULAB은 AI로 마케팅 인사이트를 만들어내는 연구소입니다. 데이터 분석과 자동화를 기반으로 브랜드의 성장을 지원합니다."
+          content="SULAB Copilot combines AI keyword intelligence, creative automation, and performance analytics to accelerate YouTube-driven growth."
         />
-        <meta property="og:title" content="SULAB | AI 마케팅 연구소" />
+        <meta
+          property="og:title"
+          content="SULAB Copilot | AI Growth Marketing Lab"
+        />
         <meta
           property="og:description"
-          content="AI 기반 유튜브 인사이트와 자동화 솔루션으로 브랜드 성장을 가속화하세요."
+          content="Benchmark competitors, ship content faster, and measure impact with a single search-driven workflow."
         />
         <meta property="og:image" content="/og-image.png" />
       </Head>
-      <main className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <main className="min-h-screen bg-white">
+        <NavigationBar />
         <HeroSection />
-        <SolutionSection />
-        <PortfolioSection />
+        <FeatureOverviewSection />
+        <VideoShowcaseSection />
+        <WorkflowSection />
+        <PricingSection />
+        <TestimonialsSection />
+        <ResourcesSection />
+        <ConsultationSection />
+        <FAQSection />
         <Footer />
       </main>
     </>

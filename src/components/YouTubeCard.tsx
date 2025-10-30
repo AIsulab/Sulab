@@ -29,7 +29,7 @@ export const YouTubeCard = ({ video }: YouTubeCardProps) => {
       href={video.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col overflow-hidden rounded-xl shadow-sm hover:shadow-md transition bg-white ring-1 ring-slate-100"
+      className="group flex flex-col overflow-hidden rounded-xl bg-white ring-1 ring-slate-100 shadow-sm transition hover:shadow-md"
     >
       <div className="relative aspect-video overflow-hidden">
         <img
@@ -41,12 +41,10 @@ export const YouTubeCard = ({ video }: YouTubeCardProps) => {
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="space-y-2">
-          <h3 className="text-base font-semibold leading-snug text-slate-900 line-clamp-2">
+          <h3 className="line-clamp-2 text-base font-semibold leading-snug text-slate-900">
             {video.title}
           </h3>
-          <p className="text-sm font-medium text-slate-500">
-            {video.channelTitle}
-          </p>
+          <p className="text-sm font-medium text-slate-500">{video.channelTitle}</p>
         </div>
         <div className="mt-auto flex items-center gap-3 text-xs font-semibold text-slate-500">
           <span>{numberFormatter.format(video.viewCount)} 조회수</span>
