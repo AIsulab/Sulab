@@ -58,12 +58,12 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
-        <div className="grid gap-10 md:grid-cols-[2fr_1fr] md:gap-16">
+    <section id="contact" className="section-padding bg-white">
+      <div className="section-container">
+        <div className="grid gap-8 md:grid-cols-[2fr_1fr] md:gap-12">
           <div>
             <h2 className="section-heading">프로젝트와 목표를 알려주세요</h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle section-copy md:mx-0">
               상세히 작성해주실수록 더 정확한 제안을 드릴 수 있습니다. 24시간 내에 회신드립니다.
             </p>
 
@@ -125,8 +125,8 @@ export function Contact() {
           </div>
 
           <aside className="rounded-3xl border border-slate-100 bg-slate-50 p-8">
-            <h3 className="text-lg font-semibold text-dark">바로 연결하기</h3>
-            <p className="mt-2 text-sm text-gray">
+            <h3 className="text-2xl font-semibold text-dark">바로 연결하기</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray">
               빠른 상담이 필요하시면 아래 채널로 메시지를 남겨주세요.
             </p>
             <div className="mt-6 flex flex-col gap-3">
@@ -153,7 +153,7 @@ export function Contact() {
                 hello@sulab.co.kr
               </a>
             </div>
-            <p className="mt-6 text-xs text-gray">
+            <p className="mt-6 text-xs leading-relaxed text-gray">
               개인정보는 상담 목적 외 다른 용도로 사용하지 않으며, 30일 이후 자동 파기됩니다.
             </p>
           </aside>

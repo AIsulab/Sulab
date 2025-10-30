@@ -37,11 +37,11 @@ const steps: ProcessStep[] = [
 
 export function Process() {
   return (
-    <section id="process" className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+    <section id="process" className="section-padding bg-slate-50">
+      <div className="section-container">
         <div className="md:text-center">
           <h2 className="section-heading">전략부터 마케팅까지, 완성형 파이프라인</h2>
-          <p className="section-subtitle md:mx-auto md:max-w-3xl">
+          <p className="section-subtitle section-copy">
             각 단계마다 전담 팀이 투입되어 프로젝트 완성도를 높이고, 단계별 산출물을 투명하게 공유합니다.
           </p>
         </div>
@@ -61,9 +61,9 @@ export function Process() {
               </span>
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">STEP {step.id}</span>
-                <h3 className="mt-2 text-xl font-semibold text-dark">{step.title}</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-dark">{step.title}</h3>
               </div>
-              <p className="text-sm text-gray md:text-base">{step.description}</p>
+              <p className="text-sm leading-relaxed text-gray md:text-base">{step.description}</p>
             </motion.article>
           ))}
         </div>
