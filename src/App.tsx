@@ -1,16 +1,25 @@
-import './index.css';
+import { Navigation } from "./components/Navigation";
+import { HeroSection } from "./components/HeroSection";
+import { AboutSection } from "./components/AboutSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { PortfolioSection } from "./components/PortfolioSection";
+import { ProcessSection } from "./components/ProcessSection";
+import { ReviewSection } from "./components/ReviewSection";
+import { ContactSection } from "./components/ContactSection";
+import { Footer } from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <main className="app-root">
-      <section className="app-card">
-        <h1 className="app-title">SULAB 홈페이지 초기화 완료</h1>
-        <p className="app-text">
-          모든 기존 데이터와 컴포넌트를 삭제했습니다. 이제 새로운 페이지 구조를 자유롭게 설계하세요.
-        </p>
-      </section>
-    </main>
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <PortfolioSection />
+      <ProcessSection />
+      <ReviewSection />
+      <ContactSection />
+      <Footer />
+    </div>
   );
 }
-
-export default App;
