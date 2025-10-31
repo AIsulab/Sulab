@@ -4,3 +4,4 @@ backups/
 package-lock.json
 
 .vercel
+.next/
