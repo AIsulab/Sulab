@@ -1,9 +1,6 @@
 {
-  "builds": [
-    { "src": "vite.config.ts", "use": "@vercel/static-build", "config": {} }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ],
-  "outputDirectory": "dist"
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "ignoreCommand": "exit 0"
 }
