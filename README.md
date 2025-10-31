@@ -1,20 +1,11 @@
-# SULAB 웹사이트
 
-Next.js(14)와 Tailwind CSS 기반으로 구현된 SULAB 공식 웹사이트입니다. Figma 시안을 유지하되 컴포넌트 구조를 재정비하고 데이터와 유틸을 분리해 유지보수를 용이하게 했습니다.
+  # SULAB 공식 웹사이트
 
-## 주요 섹션
+  This is a code bundle for SULAB 공식 웹사이트. The original project is available at https://www.figma.com/design/4bmhZLfTaBUdN4o8FwEuKz/SULAB-%EA%B3%B5%EC%8B%9D-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8.
 
-- Hero · Services · AI Search · Portfolio · Process · CTA · Contact · Footer
-- 서비스/포트폴리오 데이터 분리: `src/data`
-- AI 검색 로직 유틸화: `src/utils/aiSearch.ts`
-- Pretendard 폰트와 다크 모드 토글(테마 전환) 기반 UI
-- `react-hot-toast`, `react-icons`, `framer-motion`을 사용한 인터랙션
+  ## Running the code
 
-## 개발 환경
+  Run `npm i` to install the dependencies.
 
-```bash
-npm install
-npm run dev
-```
-
-브라우저에서 `http://localhost:3000`으로 접속하면 개발 서버를 확인할 수 있습니다.
+  Run `npm run dev` to start the development server.
+  
